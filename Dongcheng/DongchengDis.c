@@ -1,4 +1,55 @@
 #include "reg_define.h"
+void sub_2948()
+{
+    
+}
+
+void sub_2B89(unsigned char *args)
+{
+    unsigned short int tempValue = 0;
+    unsigned short int calcValue = 0;
+    tempValue = (args[1] << 8) + args[0];
+    if( tempValue< 0x8000 || tempValue >= 0xC000)
+    {
+loc_2BBA:
+        calcValue = (0x00<<8) + args[1];
+        //C = args[1];
+    }else{
+        if(args[2] >= 0x06)
+        {
+loc_2BB5:
+        calcValue = 0xFFFF;
+        //mark
+        }else{
+            unsigned char rolValue = 0;
+            unsigned char bit2Value = 0;
+            rolValue =  ( ((args[2]&0x03)<<6) + ((args[2]&0xf8)>>2) + ((args[2]&0x08)>>3) );
+            bit2Value = (args[2]&0x04)>>2;
+            calcValue = (bit2Value<<8) + rolValue + args[1];
+            //C = args[0]
+            //D = args[1]
+        }
+    }
+    //cmp calcValue, 0xffff
+    //该函数返回calcValue 与 0xFFFF的cmp结果
+    return calcValue;
+}
+void sub_2BC9()
+{
+
+}
+void sub_2CE8()
+{
+
+}
+void sub_2D3B()
+{
+
+}
+void sub_2E0A()
+{
+
+}
 unsigned char *word_FCF4;
 unsigned short int word_FCE4[4];
 unsigned char sub_3092()
