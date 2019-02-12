@@ -1,0 +1,1892 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V4.81.1.246 for 78K0 and 78K0S    12/Feb/2019  22:22:42 /
+// Copyright (C) 1992-2015 IAR Systems AB.                                    /
+//                                                                            /
+//    Core         =  78k0                                                    /
+//    Code model   =  Standard                                                /
+//                 =                                                          /
+//    Source file  =  C:\Users\Administrator\Desktop\test\test\main.c         /
+//    Command line =  C:\Users\Administrator\Desktop\test\test\main.c --core  /
+//                    78k0 --code_model standard -o                           /
+//                    C:\Users\Administrator\Desktop\test\test\Debug\Obj -e   /
+//                    --workseg_area=20 --debug --no_cse --no_unroll          /
+//                    --no_inline --no_code_motion --no_tbaa -lC              /
+//                    C:\Users\Administrator\Desktop\test\test\Debug\List     /
+//                    -la C:\Users\Administrator\Desktop\test\test\Debug\List /
+//                     --clib -I "C:\Program Files\IAR Systems\Embedded       /
+//                    Workbench 7.4\78k\INC\" -I "C:\Program Files\IAR        /
+//                    Systems\Embedded Workbench 7.4\78k\INC\CLIB\" -Ol       /
+//    List file    =  C:\Users\Administrator\Desktop\test\test\Debug\List\mai /
+//                    n.s26                                                   /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME main
+
+        RTMODEL "__clib", "yes"
+        RTMODEL "__code_model", "standard"
+        RTMODEL "__core", "78k0"
+        RTMODEL "__rt_version", "2"
+
+        RSEG CSTACK:DATA:NOROOT(1)
+
+        EXTERN ?CL78K_V4_6_L00
+        EXTERN ?UI_CMP_L02
+        EXTERN ?WRKSEG_START
+        EXTERN __INIT_NEAR_I
+        EXTERN __INIT_NEAR_Z
+
+        PUBWEAK _A_ADCR
+        PUBWEAK _A_ADM
+        PUBWEAK _A_CMP01
+        PUBWEAK _A_CR51
+        PUBWEAK _A_IF0
+        PUBWEAK _A_IF1
+        PUBWEAK _A_MK0
+        PUBWEAK _A_MK1
+        PUBWEAK _A_P12
+        PUBWEAK _A_P3
+        PUBWEAK _A_PM3
+        PUBWEAK _A_PRM00
+        PUBWEAK _A_TCL50
+        PUBWEAK _A_TCL51
+        PUBWEAK _A_TMC00
+        PUBWEAK _A_TMC50
+        PUBWEAK _A_TMC51
+        PUBWEAK _A_TMHMD1
+        PUBWEAK _A_WDTE
+        PUBLIC byte_FD40
+        PUBLIC byte_FD41
+        PUBLIC byte_FD43
+        PUBLIC byte_FD44
+        PUBLIC byte_FD45
+        PUBLIC byte_FD46
+        PUBLIC byte_FD47
+        PUBLIC byte_FD50
+        PUBLIC byte_FD56
+        PUBLIC byte_FD57
+        PUBLIC byte_FE31
+        PUBLIC byte_FE34
+        PUBLIC byte_FE35
+        PUBLIC byte_FE3E
+        PUBLIC byte_FE62
+        PUBLIC byte_FE70
+        PUBLIC byte_FE73
+        PUBLIC byte_FE82
+        PUBLIC byte_FE90
+        PUBLIC byte_FE91
+        PUBLIC byte_FE92
+        PUBLIC byte_FEA0
+        PUBLIC byte_FEB4
+        PUBLIC byte_FEB6
+        PUBLIC byte_FEB7
+        PUBLIC byte_FEC0
+        PUBLIC byte_FEC8
+        PUBLIC byte_FEC9
+        PUBLIC byte_FF17
+        PUBLIC delay
+        FUNCTION delay,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC main
+        FUNCTION main,0a01H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC num_2400
+        PUBLIC num_2480
+        PUBLIC num_FE20
+        PUBLIC reg_AX
+        PUBLIC reg_BC
+        PUBLIC reg_DE
+        PUBLIC reg_HL
+        PUBLIC sub_2076
+        FUNCTION sub_2076,0203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_207A
+        FUNCTION sub_207A,0203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_2084
+        FUNCTION sub_2084,021203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_208F
+        FUNCTION sub_208F,0203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_2093
+        FUNCTION sub_2093,0203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_209A
+        FUNCTION sub_209A,0203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_2160
+        FUNCTION sub_2160,0203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_2186
+        FUNCTION sub_2186,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 2, STACK
+        PUBLIC sub_2600
+        FUNCTION sub_2600,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 2, STACK
+        PUBLIC sub_26ED
+        FUNCTION sub_26ED,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC sub_27A8
+        FUNCTION sub_27A8,0203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_27AF
+        FUNCTION sub_27AF,021203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_27D0
+        FUNCTION sub_27D0,0203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_27EF
+        FUNCTION sub_27EF,021201H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 2, STACK
+        PUBLIC sub_283D
+        FUNCTION sub_283D,021203H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC sub_28D7
+        FUNCTION sub_28D7,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 2, STACK
+        PUBLIC sub_2948
+        FUNCTION sub_2948,0201H
+        ARGFRAME CSTACK, 0, STACK
+        PUBLIC word_FE32
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA SP DATA
+        CFI Resource A:8, X:8, B:8, C:8, D:8, E:8, H:8, L:8
+        CFI VirtualResource ?RET24:24
+        CFI Resource ?RET8:8, W0:8, W1:8, W2:8, W3:8, W4:8, W5:8, W6:8, W7:8
+        CFI Resource W8:8, W9:8, W10:8, W11:8, W12:8, W13:8, W14:8, W15:8
+        CFI Resource W16:8, W17:8, W18:8, W19:8, W20:8, W21:8, W22:8, W23:8
+        CFI Resource W24:8, W25:8, W26:8, W27:8, W28:8, W29:8, W30:8, W31:8
+        CFI Resource W32:8, W33:8, W34:8, W35:8, W36:8, W37:8, W38:8, W39:8
+        CFI Resource W40:8, W41:8, W42:8, W43:8, W44:8, W45:8, W46:8, W47:8
+        CFI Resource W48:8, W49:8, W50:8, W51:8, W52:8, W53:8, W54:8, W55:8
+        CFI Resource W56:8, W57:8, W58:8, W59:8, W60:8, W61:8, W62:8, W63:8
+        CFI Resource W64:8, W65:8, W66:8, W67:8, W68:8, W69:8, W70:8, W71:8
+        CFI Resource W72:8, W73:8, W74:8, W75:8, W76:8, W77:8, W78:8, W79:8
+        CFI Resource W80:8, W81:8, W82:8, W83:8, W84:8, W85:8, W86:8, W87:8
+        CFI Resource W88:8, W89:8, W90:8, W91:8, W92:8, W93:8, W94:8, W95:8
+        CFI Resource W96:8, W97:8, W98:8, W99:8, W100:8, W101:8, W102:8, W103:8
+        CFI Resource W104:8, W105:8, W106:8, W107:8, W108:8, W109:8, W110:8
+        CFI Resource W111:8, W112:8, W113:8, W114:8, W115:8, W116:8, W117:8
+        CFI Resource W118:8, W119:8, W120:8, W121:8, W122:8, W123:8, W124:8
+        CFI Resource W125:8, W126:8, W127:8, SP:16
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign 1
+        CFI ReturnAddress ?RET24 CODE
+        CFI CFA SP+2
+        CFI A Undefined
+        CFI X Undefined
+        CFI B SameValue
+        CFI C SameValue
+        CFI D SameValue
+        CFI E SameValue
+        CFI H Undefined
+        CFI L Undefined
+        CFI ?RET24 add(load(2, DATA, sub(CFA, 2)), mul(65536, ?RET8))
+        CFI ?RET8 SameValue
+        CFI W0 SameValue
+        CFI W1 SameValue
+        CFI W2 SameValue
+        CFI W3 SameValue
+        CFI W4 SameValue
+        CFI W5 SameValue
+        CFI W6 SameValue
+        CFI W7 SameValue
+        CFI W8 SameValue
+        CFI W9 SameValue
+        CFI W10 SameValue
+        CFI W11 SameValue
+        CFI W12 SameValue
+        CFI W13 SameValue
+        CFI W14 SameValue
+        CFI W15 SameValue
+        CFI W16 SameValue
+        CFI W17 SameValue
+        CFI W18 SameValue
+        CFI W19 SameValue
+        CFI W20 SameValue
+        CFI W21 SameValue
+        CFI W22 SameValue
+        CFI W23 SameValue
+        CFI W24 SameValue
+        CFI W25 SameValue
+        CFI W26 SameValue
+        CFI W27 SameValue
+        CFI W28 SameValue
+        CFI W29 SameValue
+        CFI W30 SameValue
+        CFI W31 SameValue
+        CFI W32 SameValue
+        CFI W33 SameValue
+        CFI W34 SameValue
+        CFI W35 SameValue
+        CFI W36 SameValue
+        CFI W37 SameValue
+        CFI W38 SameValue
+        CFI W39 SameValue
+        CFI W40 SameValue
+        CFI W41 SameValue
+        CFI W42 SameValue
+        CFI W43 SameValue
+        CFI W44 SameValue
+        CFI W45 SameValue
+        CFI W46 SameValue
+        CFI W47 SameValue
+        CFI W48 SameValue
+        CFI W49 SameValue
+        CFI W50 SameValue
+        CFI W51 SameValue
+        CFI W52 SameValue
+        CFI W53 SameValue
+        CFI W54 SameValue
+        CFI W55 SameValue
+        CFI W56 SameValue
+        CFI W57 SameValue
+        CFI W58 SameValue
+        CFI W59 SameValue
+        CFI W60 SameValue
+        CFI W61 SameValue
+        CFI W62 SameValue
+        CFI W63 SameValue
+        CFI W64 SameValue
+        CFI W65 SameValue
+        CFI W66 SameValue
+        CFI W67 SameValue
+        CFI W68 SameValue
+        CFI W69 SameValue
+        CFI W70 SameValue
+        CFI W71 SameValue
+        CFI W72 SameValue
+        CFI W73 SameValue
+        CFI W74 SameValue
+        CFI W75 SameValue
+        CFI W76 SameValue
+        CFI W77 SameValue
+        CFI W78 SameValue
+        CFI W79 SameValue
+        CFI W80 SameValue
+        CFI W81 SameValue
+        CFI W82 SameValue
+        CFI W83 SameValue
+        CFI W84 SameValue
+        CFI W85 SameValue
+        CFI W86 SameValue
+        CFI W87 SameValue
+        CFI W88 SameValue
+        CFI W89 SameValue
+        CFI W90 SameValue
+        CFI W91 SameValue
+        CFI W92 SameValue
+        CFI W93 SameValue
+        CFI W94 SameValue
+        CFI W95 SameValue
+        CFI W96 SameValue
+        CFI W97 SameValue
+        CFI W98 SameValue
+        CFI W99 SameValue
+        CFI W100 SameValue
+        CFI W101 SameValue
+        CFI W102 SameValue
+        CFI W103 SameValue
+        CFI W104 SameValue
+        CFI W105 SameValue
+        CFI W106 SameValue
+        CFI W107 SameValue
+        CFI W108 SameValue
+        CFI W109 SameValue
+        CFI W110 SameValue
+        CFI W111 SameValue
+        CFI W112 SameValue
+        CFI W113 SameValue
+        CFI W114 SameValue
+        CFI W115 SameValue
+        CFI W116 SameValue
+        CFI W117 SameValue
+        CFI W118 SameValue
+        CFI W119 SameValue
+        CFI W120 SameValue
+        CFI W121 SameValue
+        CFI W122 SameValue
+        CFI W123 SameValue
+        CFI W124 SameValue
+        CFI W125 SameValue
+        CFI W126 SameValue
+        CFI W127 SameValue
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign 1
+        CFI ReturnAddress ?RET24 CODE
+        CFI CFA SP+2
+        CFI A Undefined
+        CFI X Undefined
+        CFI B Undefined
+        CFI C Undefined
+        CFI D SameValue
+        CFI E SameValue
+        CFI H Undefined
+        CFI L Undefined
+        CFI ?RET24 add(load(2, DATA, sub(CFA, 2)), mul(65536, ?RET8))
+        CFI ?RET8 SameValue
+        CFI W0 SameValue
+        CFI W1 SameValue
+        CFI W2 SameValue
+        CFI W3 SameValue
+        CFI W4 SameValue
+        CFI W5 SameValue
+        CFI W6 SameValue
+        CFI W7 SameValue
+        CFI W8 SameValue
+        CFI W9 SameValue
+        CFI W10 SameValue
+        CFI W11 SameValue
+        CFI W12 SameValue
+        CFI W13 SameValue
+        CFI W14 SameValue
+        CFI W15 SameValue
+        CFI W16 SameValue
+        CFI W17 SameValue
+        CFI W18 SameValue
+        CFI W19 SameValue
+        CFI W20 SameValue
+        CFI W21 SameValue
+        CFI W22 SameValue
+        CFI W23 SameValue
+        CFI W24 SameValue
+        CFI W25 SameValue
+        CFI W26 SameValue
+        CFI W27 SameValue
+        CFI W28 SameValue
+        CFI W29 SameValue
+        CFI W30 SameValue
+        CFI W31 SameValue
+        CFI W32 SameValue
+        CFI W33 SameValue
+        CFI W34 SameValue
+        CFI W35 SameValue
+        CFI W36 SameValue
+        CFI W37 SameValue
+        CFI W38 SameValue
+        CFI W39 SameValue
+        CFI W40 SameValue
+        CFI W41 SameValue
+        CFI W42 SameValue
+        CFI W43 SameValue
+        CFI W44 SameValue
+        CFI W45 SameValue
+        CFI W46 SameValue
+        CFI W47 SameValue
+        CFI W48 SameValue
+        CFI W49 SameValue
+        CFI W50 SameValue
+        CFI W51 SameValue
+        CFI W52 SameValue
+        CFI W53 SameValue
+        CFI W54 SameValue
+        CFI W55 SameValue
+        CFI W56 SameValue
+        CFI W57 SameValue
+        CFI W58 SameValue
+        CFI W59 SameValue
+        CFI W60 SameValue
+        CFI W61 SameValue
+        CFI W62 SameValue
+        CFI W63 SameValue
+        CFI W64 SameValue
+        CFI W65 SameValue
+        CFI W66 SameValue
+        CFI W67 SameValue
+        CFI W68 SameValue
+        CFI W69 SameValue
+        CFI W70 SameValue
+        CFI W71 SameValue
+        CFI W72 SameValue
+        CFI W73 SameValue
+        CFI W74 SameValue
+        CFI W75 SameValue
+        CFI W76 SameValue
+        CFI W77 SameValue
+        CFI W78 SameValue
+        CFI W79 SameValue
+        CFI W80 SameValue
+        CFI W81 SameValue
+        CFI W82 SameValue
+        CFI W83 SameValue
+        CFI W84 SameValue
+        CFI W85 SameValue
+        CFI W86 SameValue
+        CFI W87 SameValue
+        CFI W88 SameValue
+        CFI W89 SameValue
+        CFI W90 SameValue
+        CFI W91 SameValue
+        CFI W92 SameValue
+        CFI W93 SameValue
+        CFI W94 SameValue
+        CFI W95 SameValue
+        CFI W96 SameValue
+        CFI W97 SameValue
+        CFI W98 SameValue
+        CFI W99 SameValue
+        CFI W100 SameValue
+        CFI W101 SameValue
+        CFI W102 SameValue
+        CFI W103 SameValue
+        CFI W104 SameValue
+        CFI W105 SameValue
+        CFI W106 SameValue
+        CFI W107 SameValue
+        CFI W108 SameValue
+        CFI W109 SameValue
+        CFI W110 SameValue
+        CFI W111 SameValue
+        CFI W112 SameValue
+        CFI W113 SameValue
+        CFI W114 SameValue
+        CFI W115 SameValue
+        CFI W116 SameValue
+        CFI W117 SameValue
+        CFI W118 SameValue
+        CFI W119 SameValue
+        CFI W120 SameValue
+        CFI W121 SameValue
+        CFI W122 SameValue
+        CFI W123 SameValue
+        CFI W124 SameValue
+        CFI W125 SameValue
+        CFI W126 SameValue
+        CFI W127 SameValue
+        CFI EndCommon cfiCommon1
+        
+        EXTERN `EI`
+        FUNCTION `EI`,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN `DI`
+        FUNCTION `DI`,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_27A1
+        FUNCTION sub_27A1,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_7F3
+        FUNCTION sub_7F3,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_8E5
+        FUNCTION sub_8E5,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_95D
+        FUNCTION sub_95D,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_80D
+        FUNCTION sub_80D,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_2BC9
+        FUNCTION sub_2BC9,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_2CE8
+        FUNCTION sub_2CE8,0202H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_EDF
+        FUNCTION sub_EDF,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_2FC8
+        FUNCTION sub_2FC8,0200H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_2D3B
+        FUNCTION sub_2D3B,0202H
+        ARGFRAME CSTACK, 0, STACK
+        EXTERN sub_2E0A
+        FUNCTION sub_2E0A,0200H
+        ARGFRAME CSTACK, 0, STACK
+
+
+        ASEGN SADDR_A:DATA:NOROOT,0ff03H
+// union <unnamed> volatile __saddr _A_P3
+_A_P3:
+        DS 1
+
+        ASEGN SADDR_A:DATA:NOROOT,0ff08H
+// union <unnamed> const volatile __saddr __no_bit_access _A_ADCR
+_A_ADCR:
+        DS 2
+
+        ASEGN SADDR_A:DATA:NOROOT,0ff0cH
+// union <unnamed> volatile __saddr _A_P12
+_A_P12:
+        DS 1
+
+        ASEGN SADDR_A:DATA:NOROOT,0ff1aH
+// union <unnamed> volatile __saddr __no_bit_access _A_CMP01
+_A_CMP01:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff23H
+// union <unnamed> volatile __sfr _A_PM3
+_A_PM3:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff28H
+// union <unnamed> volatile __sfr _A_ADM
+_A_ADM:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff41H
+// union <unnamed> volatile __sfr _A_CR51
+_A_CR51:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff43H
+// union <unnamed> volatile __sfr _A_TMC51
+_A_TMC51:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff6aH
+// union <unnamed> volatile __sfr _A_TCL50
+_A_TCL50:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff6bH
+// union <unnamed> volatile __sfr _A_TMC50
+_A_TMC50:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff6cH
+// union <unnamed> volatile __sfr _A_TMHMD1
+_A_TMHMD1:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff8cH
+// union <unnamed> volatile __sfr _A_TCL51
+_A_TCL51:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ff99H
+// union <unnamed> volatile __sfr __no_bit_access _A_WDTE
+_A_WDTE:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ffbaH
+// union <unnamed> volatile __sfr _A_TMC00
+_A_TMC00:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ffbbH
+// union <unnamed> volatile __sfr _A_PRM00
+_A_PRM00:
+        DS 1
+
+        ASEGN NEAR_A:DATA:NOROOT,0ffe0H
+// union <unnamed> volatile __sfr _A_IF0
+_A_IF0:
+        DS 2
+
+        ASEGN NEAR_A:DATA:NOROOT,0ffe2H
+// union <unnamed> volatile __sfr _A_IF1
+_A_IF1:
+        DS 2
+
+        ASEGN NEAR_A:DATA:NOROOT,0ffe4H
+// union <unnamed> volatile __sfr _A_MK0
+_A_MK0:
+        DS 2
+
+        ASEGN NEAR_A:DATA:NOROOT,0ffe6H
+// union <unnamed> volatile __sfr _A_MK1
+_A_MK1:
+        DS 2
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(1)
+// union REG_AX reg_AX
+reg_AX:
+        DS 2
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(1)
+// union REG_BC reg_BC
+reg_BC:
+        DS 2
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(1)
+// union REG_DE reg_DE
+reg_DE:
+        DS 2
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(1)
+// union REG_HL reg_HL
+reg_HL:
+        DS 2
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FF17:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE62:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(1)
+byte_FE70:
+        DS 2
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(1)
+byte_FE73:
+        DS 2
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG CODE:CODE:NOROOT(0)
+delay:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function delay
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        PUSH      BC
+        CFI C Frame(CFA, -4)
+        CFI B Frame(CFA, -3)
+        CFI CFA SP+4
+        PUSH      DE
+        CFI E Frame(CFA, -6)
+        CFI D Frame(CFA, -5)
+        CFI CFA SP+6
+        ; Total Auto size: 0
+        MOVW      HL,AX
+        MOVW      DE,#0
+        BR        ??main_0
+??delay_0:
+        ADDW      AX,#1
+??delay_1:
+        CMPW      AX,#100
+        BC        ??delay_0
+        INCW      DE
+??main_0:
+        MOVW      AX,DE
+        PUSH      HL
+        CFI CFA SP+8
+        POP       BC
+        CFI CFA SP+6
+        CALL      ?UI_CMP_L02
+        BNC       ??main_1
+        MOVW      AX,#0
+        BR        ??delay_1
+??main_1:
+        POP       DE
+        CFI E SameValue
+        CFI D SameValue
+        CFI CFA SP+4
+        POP       BC
+        CFI C SameValue
+        CFI B SameValue
+        CFI CFA SP+2
+        RET       
+        CFI EndBlock cfiBlock0
+        REQUIRE ?CL78K_V4_6_L00
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_2076:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function sub_2076
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        MOV       0xFFBB,#1
+        RET       
+        CFI EndBlock cfiBlock1
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_PRM00
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_207A:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function sub_207A
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        MOV       A,#243
+        MOV       0xFF6A,#5
+        CLR1      0xFFE5.7
+        MOV       byte_FF17,A
+        RET       
+        CFI EndBlock cfiBlock2
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_TCL50
+        REQUIRE _A_MK0
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_2084:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function sub_2084
+        FUNCALL sub_2084, sub_208F
+        LOCFRAME CSTACK, 0, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2084, sub_2093
+        LOCFRAME CSTACK, 0, STACK
+        ARGFRAME CSTACK, 0, STACK
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        CALL      sub_208F
+??sub_2084_0:
+        MOV       A,0xFFE1
+        AND       A,#32
+        CMP       A,#0
+        BZ        ??sub_2084_0
+        CALL      sub_2093
+        RET       
+        CFI EndBlock cfiBlock3
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_IF0
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_208F:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function sub_208F
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        MOV       0xFFBA,#12
+        RET       
+        CFI EndBlock cfiBlock4
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_TMC00
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_2093:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function sub_2093
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        MOV       0xFFBA,#0
+        CLR1      0xFFE1.5
+        RET       
+        CFI EndBlock cfiBlock5
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_TMC00
+        REQUIRE _A_IF0
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_209A:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function sub_209A
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        SET1      0xFF6B.7
+        RET       
+        CFI EndBlock cfiBlock6
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_TMC50
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_2160:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function sub_2160
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        CLR1      0xFFE2.0
+        SET1      0xFF28.7
+??sub_2160_0:
+        MOV       A,0xFFE2
+        AND       A,#1
+        CMP       A,#0
+        BZ        ??sub_2160_0
+        MOVW      AX,S:0xFF08
+        MOVW      byte_FE70,AX
+        CLR1      0xFF28.7
+        MOVW      AX,byte_FE70
+        XCH       A,X
+        ADD       A,byte_FE73
+        XCH       A,X
+        ADDC      A,byte_FE73+1
+        MOVW      byte_FE73,AX
+        RET       
+        CFI EndBlock cfiBlock7
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_ADCR
+        REQUIRE _A_ADM
+        REQUIRE _A_IF1
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FEC8:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FEC9:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FEA0:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FEB7:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_2186:
+        CFI Block cfiBlock8 Using cfiCommon1
+        CFI Function sub_2186
+        FUNCALL sub_2186, `EI`
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2186, `DI`
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        PUSH      DE
+        CFI E Frame(CFA, -4)
+        CFI D Frame(CFA, -3)
+        CFI CFA SP+4
+        ; Total Auto size: 0
+        MOV       E,A
+        MOV       0xFF6C,#64
+        MOV       S:0xFF1A,#39
+        CLR1      0xFFE1.2
+        CLR1      0xFFE5.2
+        MOV       0xFF6C,#192
+        CALL      `EI`
+        MOVW      HL,#byte_FE62
+        CLR1      [HL].3
+        MOV       A,byte_FE62
+        MOV       S:0xFF03,A
+        CLR1      0xFF23.3
+        MOV       0xFF43,#7
+        MOV       0xFF8C,#4
+        MOV       0xFF41,#99
+        MOV       0xFF43,#135
+        BR        ??main_2
+??sub_2186_0:
+        MOV       0xFF43,#7
+??main_2:
+        MOV       A,#0
+        MOV       byte_FEC8,A
+        MOV       A,C
+        AND       A,#1
+        CMP       A,#0
+        BNZ       ??main_3
+        MOV       A,B
+        MOV       byte_FEC9,A
+        BR        ??main_4
+??main_3:
+        MOV       A,E
+        MOV       byte_FEC9,A
+??main_4:
+        MOV       A,0xFFE5
+        AND       A,#4
+        CMP       A,#0
+        BNZ       ??main_5
+        MOV       0xFF99,#172
+??main_5:
+        MOVW      HL,#byte_FEA0
+        MOV1      CY,[HL].1
+        BC        ??main_6
+        MOV       A,byte_FEB7
+        CMP       A,#0
+        BNZ       ??main_4
+??sub_2186_1:
+        CALL      `DI`
+        MOV       0xFF43,#7
+        MOV       0xFF6C,#64
+        SET1      0xFFE5.6
+        POP       DE
+        CFI E SameValue
+        CFI D SameValue
+        CFI CFA SP+2
+        RET       
+        CFI E Frame(CFA, -4)
+        CFI D Frame(CFA, -3)
+        CFI CFA SP+4
+??main_6:
+        MOV       A,byte_FEC9
+        CMP       A,byte_FEC8
+        BNC       ??main_4
+        DEC       C
+        MOV       A,C
+        CMP       A,#0
+        BNZ       ??main_7
+        BR        ??sub_2186_1
+??main_7:
+        MOV       A,C
+        AND       A,#1
+        CMP       A,#0
+        BZ        ??sub_2186_0
+        MOV       0xFF43,#135
+        BR        ??main_2
+        CFI EndBlock cfiBlock8
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_TMHMD1
+        REQUIRE _A_TCL51
+        REQUIRE _A_WDTE
+        REQUIRE _A_P3
+        REQUIRE _A_CMP01
+        REQUIRE _A_PM3
+        REQUIRE _A_CR51
+        REQUIRE _A_TMC51
+        REQUIRE _A_IF0
+        REQUIRE _A_MK0
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+num_FE20:
+        DS 32
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(1)
+word_FE32:
+        DS 2
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FEC0:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD40:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD43:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD57:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE91:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FEB6:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE90:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE3E:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE92:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE31:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE34:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE35:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_2600:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function sub_2600
+        FUNCALL sub_2600, sub_2948
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_27A1
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_27EF
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, `DI`
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_27A8
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_283D
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, `DI`
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_27A1
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_28D7
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, `DI`
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_27A8
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_7F3
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_8E5
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_95D
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_80D
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_2600, sub_26ED
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        PUSH      BC
+        CFI C Frame(CFA, -4)
+        CFI B Frame(CFA, -3)
+        CFI CFA SP+4
+        ; Total Auto size: 0
+        MOV       A,byte_FEC0
+        CMP       A,#10
+        BNZ       ??main_8
+        MOV       A,#0
+        MOV       byte_FD40,A
+        BR        N:??main_9
+??main_8:
+        MOVW      HL,#byte_FD43
+        MOV1      CY,[HL].0
+        BC        $+5
+        BR        N:??main_10
+        CALL      sub_2948
+        CALL      sub_27A1
+        CALL      sub_27EF
+        CALL      `DI`
+        CALL      sub_27A8
+        CALL      sub_283D
+        CALL      `DI`
+        CALL      sub_27A1
+        CALL      sub_28D7
+        CALL      `DI`
+        CALL      sub_27A8
+        MOVW      HL,#byte_FD57
+        MOV1      CY,[HL].3
+        BNC       ??main_11
+        BR        N:??main_9
+??main_11:
+        MOVW      HL,#byte_FD43
+        MOV1      CY,[HL].2
+        BC        ??main_12
+        BR        N:??main_9
+??main_12:
+        MOVW      HL,#byte_FE91
+        CLR1      [HL].0
+        BR        ??main_13
+??sub_2600_0:
+        MOVW      HL,#byte_FE91
+        SET1      [HL].0
+??main_13:
+        MOV       A,byte_FEB6
+        CMP       A,#0
+        BZ        ??main_14
+        MOVW      HL,#byte_FD57
+        SET1      [HL].0
+        BR        N:??main_9
+??main_14:
+        MOV       C,#0
+        BR        ??main_15
+??sub_2600_1:
+        MOV       A,#5
+        MOVW      HL,#num_FE20
+        MOV       [HL+C],A
+        INC       C
+??main_15:
+        MOV       A,C
+        CMP       A,#33
+        MOV       C,A
+        BC        ??sub_2600_1
+        CALL      sub_7F3
+        MOVW      HL,#byte_FE90
+        MOV1      CY,[HL].1
+        BNC       $+5
+        BR        N:??main_16
+        CALL      sub_8E5
+        MOVW      HL,#byte_FE90
+        MOV1      CY,[HL].3
+        BC        ??main_17
+        MOVW      HL,#byte_FE91
+        CLR1      [HL].0
+        MOV       A,byte_FE3E
+        AND       A,#240
+        MOV       byte_FE3E,A
+        CALL      sub_95D
+        MOVW      HL,#byte_FE90
+        MOV1      CY,[HL].4
+        BNC       ??main_18
+        MOVW      HL,#byte_FE92
+        SET1      [HL].1
+        MOV       C,#22
+        BR        ??main_19
+??sub_2600_2:
+        MOV       A,#0
+        MOVW      HL,#num_FE20
+        MOV       [HL+C],A
+        INC       C
+??main_19:
+        MOV       A,C
+        CMP       A,#33
+        MOV       C,A
+        BC        ??sub_2600_2
+        MOV       A,#32
+        MOV       num_FE20+24,A
+        MOV       A,#32
+        MOV       num_FE20+25,A
+        MOV       A,#4
+        MOV       num_FE20+31,A
+        BR        ??main_20
+??main_18:
+        MOVW      HL,#byte_FE92
+        CLR1      [HL].1
+??main_20:
+        MOV       A,byte_FEC0
+        CMP       A,#10
+        BZ        ??main_21
+        CALL      sub_80D
+??main_21:
+        MOV       A,byte_FE31
+        CMP       A,#17
+        BNC       ??main_22
+        MOVW      HL,#byte_FD57
+        SET1      [HL].1
+        BR        ??main_9
+??main_22:
+        MOVW      AX,word_FE32
+        OR        A,X
+        BNZ       ??main_23
+        MOVW      HL,#byte_FE92
+        CLR1      [HL].2
+        BR        ??main_9
+??main_17:
+        MOV       A,byte_FE34
+        AND       A,#15
+        DEC       A
+        BZ        $+5
+        BR        N:??main_13
+        MOV       A,byte_FE35
+        CMP       A,#17
+        BZ        $+5
+        BR        N:??main_13
+        MOVW      HL,#byte_FD57
+        SET1      [HL].2
+        BR        ??main_9
+??main_16:
+        MOVW      HL,#byte_FE91
+        MOV1      CY,[HL].0
+        BC        $+5
+        BR        N:??sub_2600_0
+        MOVW      HL,#byte_FD57
+        SET1      [HL].1
+        BR        ??main_9
+??main_23:
+        MOVW      HL,#byte_FE92
+        SET1      [HL].2
+        BR        ??main_9
+??main_10:
+        MOV       A,byte_FD40
+        CMP       A,#6
+        BZ        ??main_9
+        CALL      sub_26ED
+??main_9:
+        POP       BC
+        CFI C SameValue
+        CFI B SameValue
+        CFI CFA SP+2
+        RET       
+        CFI EndBlock cfiBlock9
+        REQUIRE ?CL78K_V4_6_L00
+
+        RSEG NEAR_I:DATA:SORT:NOROOT(0)
+num_2480:
+        DS 7
+        REQUIRE `?<Initializer for num_2480>`
+        REQUIRE __INIT_NEAR_I
+
+        RSEG NEAR_I:DATA:SORT:NOROOT(0)
+num_2400:
+        DS 64
+        REQUIRE `?<Initializer for num_2400>`
+        REQUIRE __INIT_NEAR_I
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_26ED:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function sub_26ED
+        FUNCALL sub_26ED, `EI`
+        LOCFRAME CSTACK, 4, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_26ED, `DI`
+        LOCFRAME CSTACK, 4, STACK
+        ARGFRAME CSTACK, 0, STACK
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        PUSH      BC
+        CFI C Frame(CFA, -4)
+        CFI B Frame(CFA, -3)
+        CFI CFA SP+4
+        PUSH      DE
+        CFI E Frame(CFA, -6)
+        CFI D Frame(CFA, -5)
+        CFI CFA SP+6
+        ; Total Auto size: 0
+        MOV       0xFF6C,#64
+        MOV       A,byte_FD40
+        CMP       A,#4
+        BNZ       ??main_24
+        MOV       C,#253
+        MOV       B,#0
+        BR        ??main_25
+??main_24:
+        MOV       A,byte_FD40
+        CMP       A,#6
+        BNZ       ??main_26
+        MOV       C,#36
+        MOV       B,#128
+        BR        ??main_25
+??main_26:
+        MOV       A,#32
+        ADD       A,byte_FD40
+        MOV       C,A
+        MOV       B,#0
+??main_25:
+        MOV       A,B
+        MOV       L,A
+        MOV       A,C
+        MOV       H,#0
+        MOV       X,A
+        MOV       A,#0
+        MOV       A,X
+        MOV       X,#0
+        XCH       A,X
+        ADD       A,L
+        XCH       A,X
+        ADDC      A,H
+        MOVW      DE,AX
+        MOV       A,[DE]
+        CMP       A,#0
+        BNZ       $+5
+        BR        N:??main_27
+        MOV       A,[DE]
+        MOV       S:0xFF1A,A
+        CLR1      0xFFE1.2
+        CLR1      0xFFE5.2
+        MOV       0xFF6C,#192
+        CALL      `EI`
+        MOVW      HL,#byte_FE62
+        CLR1      [HL].3
+        MOV       A,byte_FE62
+        MOV       S:0xFF03,A
+        CLR1      0xFF23.3
+        INCW      DE
+??sub_26ED_0:
+        MOV       A,#0
+        MOV       byte_FEC8,A
+        PUSH      DE
+        CFI CFA SP+8
+        POP       HL
+        CFI CFA SP+6
+        BF        [HL].5, ??main_28
+        PUSH      DE
+        CFI CFA SP+8
+        POP       HL
+        CFI CFA SP+6
+        BF        [HL].6, ??main_29
+        MOV       A,#16
+        MOV       byte_FEC9,A
+        BR        ??main_30
+??main_29:
+        MOV       A,#4
+        MOV       byte_FEC9,A
+        BR        ??main_30
+??main_28:
+        PUSH      DE
+        CFI CFA SP+8
+        POP       HL
+        CFI CFA SP+6
+        BF        [HL].6, ??main_31
+        MOV       A,#8
+        MOV       byte_FEC9,A
+        BR        ??main_30
+??main_31:
+        MOV       A,#2
+        MOV       byte_FEC9,A
+??main_30:
+        PUSH      DE
+        CFI CFA SP+8
+        POP       HL
+        CFI CFA SP+6
+        BT        [HL].7, ??main_32
+        MOV       A,[DE]
+        AND       A,#31
+        CMP       A,#31
+        BNZ       ??main_33
+        MOVW      HL,#byte_FD43
+        MOV1      CY,[HL].0
+        BNC       ??main_34
+        BR        ??main_27
+??main_34:
+        INCW      DE
+        MOV       A,[DE]
+        AND       A,#31
+        CMP       A,#31
+        BNZ       ??main_35
+        BR        ??main_27
+??main_35:
+        BR        ??main_36
+??main_33:
+        MOV       0xFF43,#7
+        MOV       A,[DE]
+        CMP       A,#0
+        BZ        ??main_32
+        MOV       A,[DE]
+        MOV       X,#2
+        MULU      X
+        ADDW      AX,#9216
+        MOVW      HL,AX
+        MOV       A,[HL]
+        MOV       0xFF8C,A
+        MOV       A,[DE]
+        MOV       X,#2
+        MULU      X
+        ADDW      AX,#9216
+        INCW      AX
+        MOVW      HL,AX
+        MOV       A,[HL]
+        MOV       0xFF41,A
+        MOV       0xFF43,#135
+??main_32:
+        MOV       A,0xFFE5
+        AND       A,#4
+        CMP       A,#0
+        BNZ       ??main_37
+        MOV       0xFF99,#172
+??main_37:
+        MOV       A,byte_FEB7
+        CMP       A,#0
+        BZ        ??main_38
+        BR        ??main_27
+??main_38:
+        MOV       A,byte_FEC8
+        CMP       A,byte_FEC9
+        BC        ??main_32
+        INCW      DE
+??main_36:
+        MOV       A,B
+        MOV       L,A
+        MOV       A,C
+        MOV       H,#0
+        MOV       X,A
+        MOV       A,#0
+        MOV       A,X
+        MOV       X,#0
+        XCH       A,X
+        ADD       A,L
+        XCH       A,X
+        ADDC      A,H
+        MOVW      HL,AX
+        MOVW      AX,DE
+        XCH       A,X
+        SUB       A,L
+        XCH       A,X
+        SUBC      A,H
+        XOR       A,#128
+        SUBW      AX,#33024
+        BNC       $+5
+        BR        N:??sub_26ED_0
+??main_27:
+        MOV       0xFF43,#7
+        MOV       0xFF6C,#64
+        SET1      0xFFE5.2
+        CALL      `DI`
+        POP       DE
+        CFI E SameValue
+        CFI D SameValue
+        CFI CFA SP+4
+        POP       BC
+        CFI C SameValue
+        CFI B SameValue
+        CFI CFA SP+2
+        RET       
+        CFI EndBlock cfiBlock10
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_TMHMD1
+        REQUIRE _A_TCL51
+        REQUIRE _A_WDTE
+        REQUIRE _A_P3
+        REQUIRE _A_CMP01
+        REQUIRE _A_PM3
+        REQUIRE _A_CR51
+        REQUIRE _A_TMC51
+        REQUIRE _A_IF0
+        REQUIRE _A_MK0
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD44:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD45:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD46:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD47:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FE82:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_27A8:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function sub_27A8
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        MOVW      HL,#byte_FE82
+        CLR1      [HL].2
+        MOV       A,byte_FE82
+        MOV       S:0xFF0C,A
+        RET       
+        CFI EndBlock cfiBlock11
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_P12
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_27AF:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function sub_27AF
+        FUNCALL sub_27AF, `DI`
+        LOCFRAME CSTACK, 0, STACK
+        ARGFRAME CSTACK, 0, STACK
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        CALL      `DI`
+        MOV       A,0xFFE4
+        MOV       byte_FD44,A
+        MOV       A,0xFFE5
+        MOV       byte_FD45,A
+        MOV       A,0xFFE6
+        MOV       byte_FD46,A
+        MOV       A,0xFFE7
+        MOV       byte_FD47,A
+        MOV       0xFFE4,#255
+        MOV       0xFFE5,#255
+        MOV       0xFFE6,#255
+        MOV       0xFFE7,#255
+        RET       
+        CFI EndBlock cfiBlock12
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_MK0
+        REQUIRE _A_MK1
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_27D0:
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function sub_27D0
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        MOV       0xFFE0,#0
+        MOV       0xFFE1,#0
+        MOV       0xFFE2,#0
+        MOV       0xFFE3,#0
+        MOV       A,byte_FD44
+        MOV       0xFFE4,A
+        MOV       A,byte_FD45
+        MOV       0xFFE5,A
+        MOV       A,byte_FD46
+        MOV       0xFFE6,A
+        MOV       A,byte_FD47
+        MOV       0xFFE7,A
+        RET       
+        CFI EndBlock cfiBlock13
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_IF0
+        REQUIRE _A_IF1
+        REQUIRE _A_MK0
+        REQUIRE _A_MK1
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD50:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_27EF:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function sub_27EF
+        FUNCALL sub_27EF, sub_27AF
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_27EF, sub_2BC9
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_27EF, sub_2CE8
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_27EF, sub_27D0
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        PUSH      BC
+        CFI C Frame(CFA, -4)
+        CFI B Frame(CFA, -3)
+        CFI CFA SP+4
+        ; Total Auto size: 0
+        CALL      sub_27AF
+        CALL      sub_2BC9
+        CMP       A,#0
+        BZ        ??main_39
+        DEC       A
+        BNZ       ??main_40
+??main_39:
+        MOV       B,#1
+        MOV       A,byte_FD50
+        CALL      sub_2CE8
+        CMP       A,#0
+        BNZ       ??main_41
+        MOVW      HL,#byte_FD43
+        MOV1      CY,[HL].1
+        BC        ??main_42
+        MOV       A,byte_FD50
+        CMP       A,#4
+        BZ        ??main_43
+??main_42:
+        MOV       A,byte_FD50
+        MOV       byte_FD40,A
+        BR        ??main_41
+??main_43:
+        MOV       A,#1
+        MOV       byte_FD40,A
+        BR        ??main_41
+??main_40:
+        MOV       A,#6
+        MOV       byte_FD40,A
+        MOV       A,#6
+        MOV       byte_FD50,A
+??main_41:
+        MOV       A,byte_FD40
+        CMP       A,#7
+        BC        ??main_44
+        MOV       A,#6
+        MOV       byte_FD40,A
+??main_44:
+        CALL      sub_27D0
+        POP       BC
+        CFI C SameValue
+        CFI B SameValue
+        CFI CFA SP+2
+        RET       
+        CFI EndBlock cfiBlock14
+        REQUIRE ?CL78K_V4_6_L00
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(1)
+byte_FD41:
+        DS 2
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_283D:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function sub_283D
+        FUNCALL sub_283D, sub_EDF
+        LOCFRAME CSTACK, 0, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_283D, sub_EDF
+        LOCFRAME CSTACK, 0, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_283D, sub_26ED
+        LOCFRAME CSTACK, 0, STACK
+        ARGFRAME CSTACK, 0, STACK
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        MOVW      HL,#byte_FD43
+        CLR1      [HL].2
+        BR        ??main_45
+??sub_283D_0:
+        MOV       0xFF99,#172
+        CALL      sub_EDF
+        MOV       A,byte_FEB7
+        CMP       A,#0
+        BNZ       ??main_46
+        MOVW      AX,#0
+        MOVW      byte_FD41,AX
+        MOVW      HL,#byte_FD43
+        SET1      [HL].2
+        BR        ??main_47
+??main_46:
+        MOVW      AX,byte_FD41
+        ADDW      AX,#1
+        MOVW      byte_FD41,AX
+        MOVW      AX,byte_FD41
+        XCH       A,X
+        AND       A,#0
+        XCH       A,X
+        AND       A,#255
+        CMPW      AX,#1536
+        BNZ       ??sub_283D_0
+        BR        ??main_48
+??main_47:
+        MOV       0xFF99,#172
+        CALL      sub_EDF
+        MOV       A,byte_FEB7
+        CMP       A,#15
+        BNZ       ??main_49
+        MOV       A,byte_FD40
+        INC       A
+        MOV       byte_FD40,A
+        MOV       A,byte_FD40
+        CMP       A,#7
+        BC        ??main_50
+        MOV       A,#0
+        MOV       byte_FD40,A
+??main_45:
+        CALL      sub_26ED
+        MOVW      AX,#0
+        MOVW      byte_FD41,AX
+        BR        ??sub_283D_0
+??main_50:
+        MOVW      HL,#byte_FD43
+        MOV1      CY,[HL].1
+        BNC       ??main_51
+        BR        ??main_45
+??main_51:
+        MOV       A,byte_FD40
+        CMP       A,#4
+        BNZ       ??main_52
+        MOV       A,#5
+        MOV       byte_FD40,A
+??main_52:
+        BR        ??main_45
+??main_49:
+        MOVW      AX,byte_FD41
+        ADDW      AX,#1
+        MOVW      byte_FD41,AX
+        MOVW      AX,byte_FD41
+        XCH       A,X
+        AND       A,#0
+        XCH       A,X
+        AND       A,#255
+        CMPW      AX,#1536
+        BNZ       ??main_47
+        MOV       A,byte_FD50
+        MOV       byte_FD40,A
+        MOVW      HL,#byte_FD57
+        SET1      [HL].3
+??main_48:
+        RET       
+        CFI EndBlock cfiBlock15
+        REQUIRE ?CL78K_V4_6_L00
+        REQUIRE _A_WDTE
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FD56:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_28D7:
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI Function sub_28D7
+        FUNCALL sub_28D7, sub_27AF
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_28D7, sub_2BC9
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_28D7, sub_2FC8
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_28D7, sub_2D3B
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_28D7, sub_2E0A
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_28D7, sub_2CE8
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        FUNCALL sub_28D7, sub_27D0
+        LOCFRAME CSTACK, 2, STACK
+        ARGFRAME CSTACK, 0, STACK
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        PUSH      BC
+        CFI C Frame(CFA, -4)
+        CFI B Frame(CFA, -3)
+        CFI CFA SP+4
+        ; Total Auto size: 0
+        MOV       A,byte_FD40
+        CMP       A,byte_FD50
+        BNZ       ??main_53
+        BR        ??main_54
+??main_53:
+        CALL      sub_27AF
+        CALL      sub_2BC9
+        CMP       A,#0
+        BZ        ??main_55
+        DEC       A
+        BNZ       ??main_56
+??main_55:
+        MOV       A,#0
+        MOV       byte_FD56,A
+        MOV       A,byte_FD40
+        MOV       byte_FD50,A
+        BR        ??main_57
+??sub_28D7_0:
+        CALL      sub_2FC8
+??main_57:
+        MOV       B,#1
+        MOV       A,byte_FD50
+        CALL      sub_2D3B
+        CMP       A,#0
+        BZ        ??main_58
+        CMP       A,#245
+        BNZ       ??main_59
+        CALL      sub_2E0A
+        CMP       A,#0
+        BZ        ??main_60
+        DEC       A
+        BZ        ??main_60
+        BR        ??main_56
+??main_60:
+        MOV       A,#1
+        MOV       byte_FD56,A
+        BR        ??main_57
+??main_59:
+        BR        ??main_56
+??main_58:
+        MOV       A,#0
+        MOV       byte_FD50,A
+        MOV       B,#1
+        MOV       A,byte_FD50
+        CALL      sub_2CE8
+        CMP       A,#0
+        BZ        ??main_61
+        BR        ??main_56
+??main_61:
+        MOV       A,byte_FD50
+        CMP       A,byte_FD40
+        BZ        ??main_62
+        BR        ??main_56
+??main_62:
+        MOV       A,byte_FD56
+        CMP       A,#0
+        BNZ       ??sub_28D7_0
+??main_56:
+        CALL      sub_27D0
+??main_54:
+        POP       BC
+        CFI C SameValue
+        CFI B SameValue
+        CFI CFA SP+2
+        RET       
+        CFI EndBlock cfiBlock16
+        REQUIRE ?CL78K_V4_6_L00
+
+        RSEG NEAR_Z:DATA:SORT:NOROOT(0)
+byte_FEB4:
+        DS 1
+        REQUIRE __INIT_NEAR_Z
+
+        RSEG CODE:CODE:NOROOT(0)
+sub_2948:
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI Function sub_2948
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        RET       
+        CFI EndBlock cfiBlock17
+        REQUIRE ?CL78K_V4_6_L00
+
+        RSEG CODE:CODE:NOROOT(0)
+main:
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI Function main
+        ; * Stack frame (at entry) *
+        ; Param size: 0
+        ; Total Auto size: 0
+        RET       
+        CFI EndBlock cfiBlock18
+        REQUIRE ?CL78K_V4_6_L00
+
+        RSEG NEAR_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for num_2480>`:
+        DB 64, 30, 0, 30, 0, 31, 31
+
+        RSEG NEAR_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for num_2400>`:
+        DB 4, 0, 5, 118, 5, 112, 5, 105, 5, 99, 5, 94, 5, 88, 5, 83, 5, 79, 5
+        DB 74, 5, 70, 5, 66, 4, 252, 4, 238, 4, 224, 4, 212, 4, 200, 4, 189, 4
+        DB 178, 4, 168, 4, 158, 4, 149, 4, 141, 4, 133, 4, 126, 4, 118, 4, 112
+        DB 4, 105, 4, 99, 4, 94, 4, 88, 4, 0
+
+        END
+// 
+// 1 299 bytes in segment CODE
+//    19 bytes in segment NEAR_A
+//    71 bytes in segment NEAR_I
+//    71 bytes in segment NEAR_ID
+//    74 bytes in segment NEAR_Z
+//     5 bytes in segment SADDR_A
+// 
+// 1 299 bytes of CODE  memory
+//    71 bytes of CONST memory
+//   145 bytes of DATA  memory (+ 24 bytes shared)
+//
+//Errors: none
+//Warnings: 6

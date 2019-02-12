@@ -1,197 +1,172 @@
+#include"io78f0503_30.h"
+#include"intrinsics.h"
+#include"reg_define.h"
+
+#define u8 unsigned char
+#define u16 unsigned int
+#define u32 unsigned long
+/* clear IO register bit and set IO register bit */
+#define ClrBit(Para, ClrBitMap)	Para &= ~ClrBitMap
+#define SetBit(Para, SetBitMap)	Para |= SetBitMap
+
+unsigned char byte_FF17;
+unsigned char byte_FE62;
+unsigned short int byte_FE70;
+unsigned short int byte_FE73;    // Sum
 
 
-WTIMK  bit2  Á¨¨‰∏â‰Ωç
-HL Âú®ÂáΩÊï∞Ë∞ÉÁî®Ââç‰ºöÁªôÂÆö
-union REG_AX
+void sub_208F();
+void sub_2093();
+void sub_27A8();
+void sub_283D();
+void sub_28D7();
+void sub_2948();
+void sub_27A1();
+void sub_27EF();
+void sub_7F3();
+void sub_8E5();
+void sub_80D();
+void sub_95D();
+void sub_26ED();
+unsigned char sub_2BC9();
+unsigned char sub_2CE8(unsigned char a,unsigned char b);
+unsigned char *sub_3260(unsigned char numerIndex);
+unsigned char sub_2D3B(unsigned char a,unsigned char b);
+void sub_EDF();
+unsigned char sub_2E0A();
+void sub_2FC8();
+void delay(u16 us)
 {
-    unsigned short int _World;
-    struct  {
-        unsigned char A:8;
-        unsigned char X:8;
-    }_byte;
-}reg_AX;
+	u16 i,j;
+	for(i=0;i<us;i++)
+		for(j=0;j<100;j++);
+}
 
-union REG_BC
-{
-    unsigned short int _World;
-    struct  {
-        unsigned char B:8;
-        unsigned char C:8;
-    }_byte;
-}reg_BC;
-
-union REG_DE
-{
-    unsigned short int _World;
-    struct  {
-        unsigned char D:8;
-        unsigned char E:8;
-    }_byte;
-}reg_DE;
-
-union REG_HL
-{
-    unsigned short int _World;
-    struct  {
-        unsigned char H:8;
-        unsigned char L:8;
-    }_byte;
-}reg_HL;
-
-#define AX reg_AX._World
-#define A  reg_AX._byte.A
-#define X  reg_AX._byte.X
-
-#define BC reg_BC._World
-#define B  reg_BC._byte.B
-#define C  reg_BC._byte.C
-
-#define DE reg_DE._World
-#define D  reg_DE._byte.D
-#define E  reg_DE._byte.E
-
-#define HL reg_HL._World
-#define H  reg_HL._byte.H
-#define L  reg_HL._byte.L
-
-void fun_2076(void)
+void sub_2076(void)
 {
    PRM00 = 0x01;
 }
 
-
-void fun_207A(void)
+void sub_207A(void)
 {
    TCL50 = 0x05;
-   MK0H.TMMK01 = 0Ôºõ
-   Var_FF17 = 0xF3;
+   MK0H &= ~0x80;
+   byte_FF17 = 0xF3;
 }
 
 
-void fun_2084(void)
+
+void sub_2084(void)
 {
-   fun_208F();
+   sub_208F();
    while( !(IF0H & 0x20)  );
-   fun_2093();
+   sub_2093();
 }
 
-void fun_208F(void)
+void sub_208F(void)
 {
-	TMC00 = 0x0C;
+    TMC00 = 0x0C;
 }
 
-//ËØ∑‰∏≠Êñ≠Ê†áÂøó
-void fun_2093(void)
+//«Î÷–∂œ±Í÷æ
+void sub_2093(void)
 {
-	TMC00 = 0x00;
-	IF0H &= ~0x20;
+    TMC00 = 0x00;
+    IF0H &= ~0x20;
 }
 
-
-void fun_209A(void)
+void sub_209A(void)
 {
-	TMC50 |= 0x80;      //ÈúÄÁ°ÆËÆ§07 ‰ª£Ë°®Á¨¨Âá†‰Ωç
+    TMC50 |= 0x80;      //–Ë»∑»œ07 ¥˙±Ìµ⁄º∏Œª
 }
 
-unsigned short int Var_FE70;
-
-unsigned short int Var_FE73;    // Sum
-void fun_2160(void)
+void sub_2160(void)
 {
-	int ADC_data, ADC_data_sum;
-	IF1L &= ~0x01;      			// ADIF Ê∏ÖÈõ∂
-	ADM |= 0x80;       				//ÈúÄÁ°ÆËÆ§07 ‰ª£Ë°®Á¨¨Âá†‰Ωç
-	
-	while( !(IF1L & 0x01) );
-	Var_FE70 = ADCR; 
-	
-	
-	ADM &= ~0x80;
-	
-	Var_FE73 += Var_FE70;    		//Á¥ØÂä†
-	
-	
+    //int ADC_data, ADC_data_sum;
+    IF1L &= ~0x01;      			// ADIF «Â¡„
+    ADM |= 0x80;       			//–Ë»∑»œ07 ¥˙±Ìµ⁄º∏Œª
+    while( !(IF1L & 0x01) );
+    byte_FE70 = ADCR; 
+    ADM &= ~0x80;
+    byte_FE73 += byte_FE70;    		//¿€º”
 }
-
-
-
-void fun_2186(char temp_D, char temp_E, char temp_B)
+unsigned char byte_FEC8,byte_FEC9,byte_FEA0,byte_FEB7;
+void sub_2186(char temp_D, char temp_E, char temp_B)
 {
-	TMHMD1 = 0x40;
-	CMP01  = 0x27;
-	IF0H   &= ~0x04;
-	MK0H   &= ~0x04;
+    TMHMD1 = 0x40;
+    CMP01  = 0x27;
+    IF0H   &= ~0x04;
+    MK0H   &= ~0x04;
 	
-	TMHMD1 = 0xC0;
-	EI();
-	byte_FE62 &= ~0x08;
-	P3 = Var_FE62;
-	PM3 &= ~0x08;    //PM33   ÂΩì P17/TO50/TI50 Âíå P33/TO51/TI51/INTP4 ÂºïËÑöÁî®‰∫éÂÆöÊó∂Âô®ËæìÂá∫Êó∂ÔºåÂ∞Ü PM17 Âíå PM33 ‰ª•Âèä P17 ‰∏é P33 ÁöÑËæìÂá∫ ÈîÅÂ≠òÂô®Ê∏ÖÈõ∂
-	TMC51 = 0x07;
-	TCL51 = 0x04;
-	CR51 = 0x63;
-	TMC51 = 0x87;
-	
-	do 
+    TMHMD1 = 0xC0;
+    EI();
+    byte_FE62 &= ~0x08;
+    P3 = byte_FE62;
+    PM3 &= ~0x08;    //PM33   µ± P17/TO50/TI50 ∫Õ P33/TO51/TI51/INTP4 “˝Ω≈”√”⁄∂® ±∆˜ ‰≥ˆ ±£¨Ω´ PM17 ∫Õ PM33 “‘º∞ P17 ”Î P33 µƒ ‰≥ˆ À¯¥Ê∆˜«Â¡„
+    TMC51 = 0x07;
+    TCL51 = 0x04;
+    CR51 = 0x63;
+    TMC51 = 0x87;
+    do 
+    {
+        byte_FEC8 = 0;
+        if( !(temp_B & 0x01) )
 	{
-		byte_FEC8 = 0;
-		if( !(temp_B & 0x01) )
-	    {
-			byte_FEC9 = temp_E;
-	    }
-		else 
+            byte_FEC9 = temp_E;
+	}
+        else 
+	{
+            byte_FEC9 = temp_D;
+	}
+	//loc_21BB
+	do
+	{
+		if( !(MK0H & 0x04) )
 		{
-			byte_FEC9 = temp_D;
+			  WDTE = 0xAC;
 		}
-		//loc_21BB
-		do
-		{
-			if( !(MK0H & 0x04) )
-			{
-			   WDTE = 0xAC;
-			}
 	 ///loc_21C2
-			if( !(byte_FEA0 & 0x02) )
-			{
-			  if( byte_FEB7 ==  0 )
-			  {
-				//loc_21E1:
-				goto loc_21E1;
-			  }
-			}
-			else
-			{
-				if( byte_FEC8 > byte_FEC9 )
-					break;
-			}
-		
-		}while( 1);
-		temp_B--;
-		if( temp_B == 0 ) 
-			goto loc_21E1;
-		if( temp_B & 0x01 )
+		if( !(byte_FEA0 & 0x02) )
 		{
-			TMC51 = 0x87;
+			 if( byte_FEB7 ==  0 )
+			 {
+				//loc_21E1:
+                              goto loc_21E1;
+			 }
 		}
 		else
 		{
-			TMC51 = 0x7;
+			if( byte_FEC8 > byte_FEC9 )
+					break;
 		}
-	}while(1);
+		
+	}while( 1);
+	temp_B--;
+	if( temp_B == 0 ) 
+		goto loc_21E1;
+	if( temp_B & 0x01 )
+	{
+		TMC51 = 0x87;
+	}
+	else
+	{
+		TMC51 = 0x7;
+	}
+}while(1);
 loc_21E1:	
 	DI();
 	TMC51 = 0x07;
 	TMHMD1 = 0x40;
 	MK0H |= 0x40;
 }
-	
-	
 //OK	
 unsigned char num_FE20[32] ={0};
-
-void fun_2600(void)
+unsigned short int word_FE32;
+unsigned char byte_FEC0,byte_FD40,byte_FD43,byte_FD57,byte_FE91,byte_FEB6,byte_FE90,byte_FE3E,byte_FE92,byte_FE31,byte_FE34,byte_FE35;
+void sub_2600(void)
 {
-	unsigned char *p = num_FE20;
+        unsigned char i;
+	//unsigned char *p = num_FE20;
 	if( byte_FEC0 == 10 )
 	{
 		byte_FD40 = 0;
@@ -335,43 +310,41 @@ void fun_2600(void)
 		}
 	}
 }
-
- 
-
 unsigned char num_2480[7] = {0x40,0x1E,0x00,0x1E,0x00,0x1F,0x1F};
-unsigned char num_2400[] = {0x04,0x00,
-							0x05,0x76,
-							0x05,0x70,
-							0x05,0x69,
-							0x05,0x63,
-							0x05,0x5E,
-							0x05,0x58,
-							0x05,0x53,
-							0x05,0x4F,
-							0x05,0x4A,
-							0x05,0x46,
-							0x05,0x42,
-							0x04,0xFC,
-							0x04,0xEE,
-							0x04,0xE0,
-							0x04,0xD4,
-							0x04,0xC8,
-							0x04,0xBD,
-							0x04,0xB2,
-							0x04,0xA8,
-							0x04,0x9E,
-							0x04,0x95,
-							0x04,0x8D,
-							0x04,0x85,
-							0x04,0x7E,
-							0x04,0x76,
-							0x04,0x70,
-							0x04,0x69,
-							0x04,0x63,
-							0x04,0x5E,
-							0x04,0x58,
-							0x04,0x00};
-//    Âú∞ÂùÄÔºöFD00
+unsigned char num_2400[] = {    0x04,0x00, 
+                                0x05,0x76,
+                                0x05,0x70,
+				0x05,0x69,
+				0x05,0x63,
+				0x05,0x5E,
+				0x05,0x58,
+				0x05,0x53,
+				0x05,0x4F,
+				0x05,0x4A,
+				0x05,0x46,
+				0x05,0x42,
+				0x04,0xFC,
+				0x04,0xEE,
+				0x04,0xE0,
+				0x04,0xD4,
+				0x04,0xC8,
+				0x04,0xBD,
+				0x04,0xB2,
+				0x04,0xA8,
+				0x04,0x9E,
+				0x04,0x95,
+				0x04,0x8D,
+				0x04,0x85,
+				0x04,0x7E,
+				0x04,0x76,
+				0x04,0x70,
+				0x04,0x69,
+				0x04,0x63,
+				0x04,0x5E,
+				0x04,0x58,
+				0x04,0x00       };
+
+//    µÿ÷∑£∫FD00
 void sub_26ED(void)
 {
 	unsigned char temp_D,temp_E;
@@ -388,7 +361,7 @@ void sub_26ED(void)
 	{
 		if( byte_FD40 == 6 )
 		{
-			temp_D = 0x24;    //Êï∞ÁªÑ
+			temp_D = 0x24;    // ˝◊È
 			temp_E = 0x80;
 		}
 		//loc_2706
@@ -400,19 +373,19 @@ void sub_26ED(void)
 		}
 	}
 	//loc_270B
-	temp_DE = (unsinged char *) ((temp_D <<8) + temp_E);
+	temp_DE = (unsigned char *) ((temp_D <<8) + temp_E);
 	if( *temp_DE != 0 )
 	{
 		// loc_2713
-		CMP01 = *temp_DE;      //ÈúÄÁ°ÆËÆ§
-		IF0H &= ~0x04;          //WTIIF  ‰∏≠Êñ≠ËØ∑Ê±ÇÊ†áÂøó‰Ωç
-		MK0H &= ~0x04;          //WTIMK  ‰∏≠Êñ≠Â±èËîΩÊ†áÂøó‰Ωç
-		TMHMD1 = 0xC0;          // ÂÆöÊó∂Âô®
+		CMP01 = *temp_DE;      //–Ë»∑»œ
+		IF0H &= ~0x04;          //WTIIF  ÷–∂œ«Î«Û±Í÷æŒª
+		MK0H &= ~0x04;          //WTIMK  ÷–∂œ∆¡±Œ±Í÷æŒª
+		TMHMD1 = 0xC0;          // ∂® ±∆˜
 		EI();
 		byte_FE62 &= ~0x08;    
-		P3 = byte_FE62;        //Êô∂ÊåØÁõ∏ÂÖ≥
-		PM3 &= ~0x08;           // ËæìÂá∫
-		temp_DE++;        //ËøôÈáåÊòØÂú∞ÂùÄÂä†‰∏Ä
+		P3 = byte_FE62;        //æß’Òœ‡πÿ
+		PM3 &= ~0x08;           //  ‰≥ˆ
+		temp_DE++;        //’‚¿Ô «µÿ÷∑º”“ª
 		
 		do
 		{
@@ -449,7 +422,7 @@ void sub_26ED(void)
 					{
 						goto loc_2795;
 					}
-					temp_DE++;   // Êï∞ÁªÑÂ∫èÂè∑
+					temp_DE++;   //  ˝◊È–Ú∫≈
 					if( ( (*(temp_DE)) & 0x1F ) == 0x1F )
 					{
 						goto loc_2795;
@@ -459,11 +432,11 @@ void sub_26ED(void)
 				}
 				else  //loc_276A
 				{
-					TMC51 = 0x07;      //ÂÆöÊó∂Âô®
+					TMC51 = 0x07;      //∂® ±∆˜
 					if( (*(temp_DE))  != 0 )
 					{
-						TCL51 = *((unsigned char *)((0x24 <<8) + ((*(temp_DE)<< 1))) );   //Êó∂ÈíüÈÄâÊã©
-						WTM = *((unsigned char *)((0x24 <<8) + ((*(temp_DE)<< 1))) + 1);
+						TCL51 = *((unsigned char *)((0x24 <<8) + ((*(temp_DE)<< 1))) );   // ±÷”—°‘Ò
+						CR51 = *((unsigned char *)((0x24 <<8) + ((*(temp_DE)<< 1))) + 1);
 						TMC51 = 0x87;
 					}
 					
@@ -474,16 +447,16 @@ void sub_26ED(void)
 			{
 				if( !(MK0H & 0x04) )
 				{
-					WDTE = 0xAC;   //Ê∏ÖÁúãÈó®Áãó
+					WDTE = 0xAC;   //«Âø¥√≈π∑
 				}
 				//loc_2786
 				if( byte_FEB7 )
 				{
 					goto loc_2795;
 				}
-			}while(byte_FEC8 < byte_FEC9);	  //  byte_FEC8 ËÆ°Êï∞Âô® 
+			}while(byte_FEC8 < byte_FEC9);	  //  byte_FEC8 º∆ ˝∆˜ 
 			temp_DE++;
-		}while((temp_DE- (unsinged char *) ((temp_D <<8) + temp_E)) < 256);
+		}while((temp_DE- (unsigned char *) ((temp_D <<8) + temp_E)) < 256);
 		
 	}
 	//loc_2795
@@ -494,13 +467,12 @@ void sub_26ED(void)
 	 DI();
 }
 
-
-
+unsigned char byte_FD44,byte_FD45,byte_FD46,byte_FD47,byte_FE82;
 // ok
 void sub_27A8(void)
 {
-	byte_FE82 &= ~0x04;
-	CR01 = byte_FE82;
+    byte_FE82 &= ~0x04;
+    P12 = byte_FE82;
 }
 
 //OK
@@ -530,13 +502,14 @@ void sub_27D0(void)
 	MK1H = byte_FD47;
 }
 
+unsigned char byte_FD50;
 //OK
 void sub_27EF()
 {
     unsigned char return_2BC9;
 	unsigned char return_2CE8;
 	sub_27AF();
-	return_2BC9 = sub_2BC9();    //sub_2BC9 ÊòØÊúâËøîÂõûÂÄº
+	return_2BC9 = sub_2BC9();    //sub_2BC9  «”–∑µªÿ÷µ
 	if( return_2BC9 == 0 || ( return_2BC9 == 0x01 ) )
 	{
 		//loc_27FE
@@ -570,7 +543,7 @@ void sub_27EF()
 
 //OK
 //OK
-//Ê≥®ÊÑèÔºöbyte_FD41 byte_FD42  ÊòØ‰∏Ä‰∏™16‰Ωç
+//◊¢“‚£∫byte_FD41 byte_FD42   «“ª∏ˆ16Œª
 unsigned short int byte_FD41;
 void sub_283D(void)
 {
@@ -603,7 +576,7 @@ void sub_283D(void)
 			sub_EDF();
 			if( byte_FEB7 == 0x0F )
 			{
-				byte_FD40++Ôºõ
+				byte_FD40++;
 				if( byte_FD40 >= 0x07 )
 				{
 					byte_FD40 = 0;
@@ -637,7 +610,7 @@ void sub_283D(void)
 	
 }
 
-
+unsigned char byte_FD56;
 //OK
 void sub_28D7(void)
 {
@@ -697,234 +670,29 @@ void sub_28D7(void)
 	sub_27D0();
 }
 
-
+unsigned char byte_FEB4;
 void sub_2948()
 {
-	byte_FD43 &= ~0x02;
-	sub_80D();
-	if( !(byte_FE90 & 0x01) )
-	{
-		byte_FEB4 = 0x20;
-		
-	}
-	//loc_2963
-	word_FED0 = 0;
-	
-	do{
-		PM3 &= ~0x01;
-		
-		
-		PM3 |= 0x01;
-		
-		do
-		{
-			if( P3 & 0x01 )
-			{
-				//loc_297C
-				if( 
-			}
-		}while(1);
-	}while(1);
+
 }
 
-
-//OK
-void sub_2A00(void)
+void main()
 {
-	byte_FFC0 = 0xA5;
-	byte_FFC4 = 1;
-	byte_FFC4 = 0xFE; 
-	byte_FFC4 = 1;
+   //sub_2076();
+   //sub_207A();
+   //sub_2084();
+   //sub_208F();
+   //sub_2093();
+   //sub_209A();
+   //fun_2160();
+   //sub_2186(3,4,5);
+   //sub_2600();
+    //sub_26ED();
+  //sub_27A8();
+  //sub_27AF();
+  //sub_27D0();
+   //sub_27EF();
+   //sub_283D();
+   //sub_28D7();
 }
-//OK
-void sub_2A0D(void)
-{
-	byte_FFC0 = 0xA5;
-	byte_FFC4 = 0;
-	byte_FFC4 = 0xFF; 
-	byte_FFC4 = 0;
-}
-
-//OK
-unsigned char sub_2A2C(void)
-{
-	if(!sub_2B6A())
-	{
-		return 5;
-	}
-	else
-	{
-		
-	}
-	
-}
-
-//need check
-void sub_2A45(void)
-{
-	if( !sub_2B89() )
-	{
-		return 5;
-	}
-	else
-	{
-	}
-}
-
-
-void sub_2A8A()
-{
-	if( !sub_2B6A() )
-	{
-		return 5;
-	}
-	else
-	{
-	}
-}
-
-//Nop
-void sub_2B32()
-{
-}
-
-void sub_2B3E()
-{
-}
-
-bool sub_2B6A(char temp)
-{
-	if( (temp > 0x20) || (temp < 0x30) )	
-	{
-		if( temp >= 0xFF )
-		{
-			return 1;
-		}
-		else
-			return 0;
-	}
-	else
-	{
-		if( temp < 0x06 )
-		{
-			temp << 4;
-		}
-		
-	}
-}
-
-void sub_2B89()
-{
-}
-
-void sub_2BC9()
-{
-}
-
-
-
-void sub_2CE8()
-{
-}
-
-
-
-void sub_2D3B()
-{
-	
-}
-
-
-void sub_2E0A()
-{
-	
-}
-
-unsigned char num_2BC3[3] = {0x0D,0x0E,0x0F};
-unsigned char num_2BC6[3] = {0x00,0x00,0x00};
-unsigned char sub_2FC8()
-{
-	unsigned char return_temp,tempB;
-	unsigned char return_C;
-	return_temp = sub_3325();
-	if( return_temp )
-	{
-		return_C = 0xF4;
-	}
-	//loc_2FD6
-	else
-	{
-		return_temp = sub_3092();
-		if( return_temp == 0xFF )
-		{
-			return_C = 0xFA;
-		}
-			
-		else
-		{
-			word_FCE8 = return_temp;
-			tempB = return_temp;
-			do
-			{
-				tempB--;
-				if( word_FCE8 == tempB )
-				{
-					return_C = 0xF9;
-					return return_C;
-				}
-				sub_3260();
-				return_temp = sub_3279();
-				if( return_temp == 0 )
-				{
-					break;
-				}
-				
-				
-			}while(1);
-			
-			byte_FCE9 = tempB;
-			sub_31AF();
-			return_temp = sub_31BF();
-			if( return_temp )
-			{
-				return_C = 0xFE;
-				return return_C;
-			}
-			byte_FCF2 = 0x02;
-			
-			//loc_3012
-			do
-			{
-				return_C = byte_FCE9;
-				return_temp = sub_31D3(num_2BC6[return_C-1],num_2BC3[return_C-1]);
-				if( return_temp == 0 )
-				{
-					return_C = 0;
-					sub_31B7();
-					return return_C;
-				}
-				byte_FCF2--;
-				if( byte_FCF2 == 0 )
-				{
-					break;
-				}
-			}while(1);
-			
-			return_temp = sub_3156(byte_FCE9);
-			if( return_temp == 0 )
-			{
-				return_C = 0xFC;
-			}
-			sub_31B7();
-			return return_C;
-			
-		}
-		
-	}
-}
-
-
-
-
-
 

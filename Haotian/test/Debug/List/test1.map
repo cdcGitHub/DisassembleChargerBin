@@ -1,0 +1,4 @@
+Error[e46]: Undefined external "DI" referred in main ( C:\Users\Administrator\Desktop\test\test\Debug\Obj\main.r26 )
+Error[e46]: Undefined external "sub_2BC9" referred in main ( C:\Users\Administrator\Desktop\test\test\Debug\Obj\main.r26 )
+Error[e46]: Undefined external "sub_2CE8" referred in main ( C:\Users\Administrator\Desktop\test\test\Debug\Obj\main.r26 )
+Error[e62]: File name "C:\Users\Administrator\Desktop\test\test\Debug\Exe\test1.hex" used for multiple files

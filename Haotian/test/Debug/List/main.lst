@@ -1,0 +1,2045 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V4.81.1.246 for 78K0 and 78K0S     12/Feb/2019  22:22:42 #
+# Copyright (C) 1992-2015 IAR Systems AB.                                     #
+#                                                                             #
+#    Core         =  78k0                                                     #
+#    Code model   =  Standard                                                 #
+#                 =                                                           #
+#    Source file  =  C:\Users\Administrator\Desktop\test\test\main.c          #
+#    Command line =  C:\Users\Administrator\Desktop\test\test\main.c --core   #
+#                    78k0 --code_model standard -o                            #
+#                    C:\Users\Administrator\Desktop\test\test\Debug\Obj -e    #
+#                    --workseg_area=20 --debug --no_cse --no_unroll           #
+#                    --no_inline --no_code_motion --no_tbaa -lC               #
+#                    C:\Users\Administrator\Desktop\test\test\Debug\List -la  #
+#                    C:\Users\Administrator\Desktop\test\test\Debug\List      #
+#                    --clib -I "C:\Program Files\IAR Systems\Embedded         #
+#                    Workbench 7.4\78k\INC\" -I "C:\Program Files\IAR         #
+#                    Systems\Embedded Workbench 7.4\78k\INC\CLIB\" -Ol        #
+#    List file    =  C:\Users\Administrator\Desktop\test\test\Debug\List\main #
+#                    .lst                                                     #
+#    Object file  =  C:\Users\Administrator\Desktop\test\test\Debug\Obj\main. #
+#                    r26                                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\test\test\main.c
+      1          #include"io78f0503_30.h"
+
+   \                                 In  segment SADDR_A, at 0xff03
+   \   union <unnamed> volatile __saddr _A_P3
+   \                     _A_P3:
+   \   0000                  DS 1
+
+   \                                 In  segment SADDR_A, at 0xff08
+   \   union <unnamed> const volatile __saddr __no_bit_access _A_ADCR
+   \                     _A_ADCR:
+   \   0000                  DS 2
+
+   \                                 In  segment SADDR_A, at 0xff0c
+   \   union <unnamed> volatile __saddr _A_P12
+   \                     _A_P12:
+   \   0000                  DS 1
+
+   \                                 In  segment SADDR_A, at 0xff1a
+   \   union <unnamed> volatile __saddr __no_bit_access _A_CMP01
+   \                     _A_CMP01:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff23
+   \   union <unnamed> volatile __sfr _A_PM3
+   \                     _A_PM3:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff28
+   \   union <unnamed> volatile __sfr _A_ADM
+   \                     _A_ADM:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff41
+   \   union <unnamed> volatile __sfr _A_CR51
+   \                     _A_CR51:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff43
+   \   union <unnamed> volatile __sfr _A_TMC51
+   \                     _A_TMC51:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff6a
+   \   union <unnamed> volatile __sfr _A_TCL50
+   \                     _A_TCL50:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff6b
+   \   union <unnamed> volatile __sfr _A_TMC50
+   \                     _A_TMC50:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff6c
+   \   union <unnamed> volatile __sfr _A_TMHMD1
+   \                     _A_TMHMD1:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff8c
+   \   union <unnamed> volatile __sfr _A_TCL51
+   \                     _A_TCL51:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xff99
+   \   union <unnamed> volatile __sfr __no_bit_access _A_WDTE
+   \                     _A_WDTE:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xffba
+   \   union <unnamed> volatile __sfr _A_TMC00
+   \                     _A_TMC00:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xffbb
+   \   union <unnamed> volatile __sfr _A_PRM00
+   \                     _A_PRM00:
+   \   0000                  DS 1
+
+   \                                 In  segment NEAR_A, at 0xffe0
+   \   union <unnamed> volatile __sfr _A_IF0
+   \                     _A_IF0:
+   \   0000                  DS 2
+
+   \                                 In  segment NEAR_A, at 0xffe2
+   \   union <unnamed> volatile __sfr _A_IF1
+   \                     _A_IF1:
+   \   0000                  DS 2
+
+   \                                 In  segment NEAR_A, at 0xffe4
+   \   union <unnamed> volatile __sfr _A_MK0
+   \                     _A_MK0:
+   \   0000                  DS 2
+
+   \                                 In  segment NEAR_A, at 0xffe6
+   \   union <unnamed> volatile __sfr _A_MK1
+   \                     _A_MK1:
+   \   0000                  DS 2
+      2          #include"intrinsics.h"
+      3          #include"reg_define.h"
+
+   \                                 In  segment NEAR_Z, align 2, align-sorted
+   \   union REG_AX reg_AX
+   \                     reg_AX:
+   \   0000                  DS 2
+   \   0002                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 2, align-sorted
+   \   union REG_BC reg_BC
+   \                     reg_BC:
+   \   0000                  DS 2
+   \   0002                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 2, align-sorted
+   \   union REG_DE reg_DE
+   \                     reg_DE:
+   \   0000                  DS 2
+   \   0002                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 2, align-sorted
+   \   union REG_HL reg_HL
+   \                     reg_HL:
+   \   0000                  DS 2
+   \   0002                  REQUIRE __INIT_NEAR_Z
+      4          
+      5          #define u8 unsigned char
+      6          #define u16 unsigned int
+      7          #define u32 unsigned long
+      8          /* clear IO register bit and set IO register bit */
+      9          #define ClrBit(Para, ClrBitMap)	Para &= ~ClrBitMap
+     10          #define SetBit(Para, SetBitMap)	Para |= SetBitMap
+     11          
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+     12          unsigned char byte_FF17;
+   \                     byte_FF17:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+     13          unsigned char byte_FE62;
+   \                     byte_FE62:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 2, align-sorted
+     14          unsigned short int byte_FE70;
+   \                     byte_FE70:
+   \   0000                  DS 2
+   \   0002                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 2, align-sorted
+     15          unsigned short int byte_FE73;    // Sum
+   \                     byte_FE73:
+   \   0000                  DS 2
+   \   0002                  REQUIRE __INIT_NEAR_Z
+     16          
+     17          
+     18          void sub_208F();
+     19          void sub_2093();
+     20          void sub_27A8();
+     21          void sub_283D();
+     22          void sub_28D7();
+     23          void sub_2948();
+     24          void sub_27A1();
+     25          void sub_27EF();
+     26          void sub_7F3();
+     27          void sub_8E5();
+     28          void sub_80D();
+     29          void sub_95D();
+     30          void sub_26ED();
+     31          unsigned char sub_2BC9();
+     32          unsigned char sub_2CE8(unsigned char a,unsigned char b);
+     33          unsigned char *sub_3260(unsigned char numerIndex);
+     34          unsigned char sub_2D3B(unsigned char a,unsigned char b);
+     35          void sub_EDF();
+     36          unsigned char sub_2E0A();
+     37          void sub_2FC8();
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     38          void delay(u16 us)
+   \                     delay:
+     39          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000   B3             PUSH      BC
+   \   0001   B5             PUSH      DE
+   \   0002                  ; Total Auto size: 0
+   \   0002   D6             MOVW      HL,AX
+     40          	u16 i,j;
+     41          	for(i=0;i<us;i++)
+   \   0003   140000         MOVW      DE,#0
+   \   0006   FA09           BR        ??main_0
+     42          		for(j=0;j<100;j++);
+   \                     ??delay_0:
+   \   0008   CA0100         ADDW      AX,#1
+   \                     ??delay_1:
+   \   000B   EA6400         CMPW      AX,#100
+   \   000E   8DF8           BC        ??delay_0
+   \   0010   84             INCW      DE
+   \                     ??main_0:
+   \   0011   C4             MOVW      AX,DE
+   \   0012   B7             PUSH      HL
+   \   0013   B2             POP       BC
+   \   0014   9A....         CALL      ?UI_CMP_L02
+   \   0017   9D05           BNC       ??main_1
+   \   0019   100000         MOVW      AX,#0
+   \   001C   FAED           BR        ??delay_1
+     43          }
+   \                     ??main_1:
+   \   001E   B4             POP       DE
+   \   001F   B2             POP       BC
+   \   0020   AF             RET       
+   \   0021                  REQUIRE ?CL78K_V4_6_L00
+     44          
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     45          void sub_2076(void)
+   \                     sub_2076:
+     46          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+     47             PRM00 = 0x01;
+   \   0000   13BB01         MOV       0xFFBB,#1
+     48          }
+   \   0003   AF             RET       
+   \   0004                  REQUIRE ?CL78K_V4_6_L00
+   \   0004                  REQUIRE _A_PRM00
+     49          
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     50          void sub_207A(void)
+   \                     sub_207A:
+     51          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+     52             TCL50 = 0x05;
+   \   0000   A1F3           MOV       A,#243
+   \   0002   136A05         MOV       0xFF6A,#5
+     53             MK0H &= ~0x80;
+   \   0005   717BE5         CLR1      0xFFE5.7
+     54             byte_FF17 = 0xF3;
+   \   0008   9E....         MOV       byte_FF17,A
+     55          }
+   \   000B   AF             RET       
+   \   000C                  REQUIRE ?CL78K_V4_6_L00
+   \   000C                  REQUIRE _A_TCL50
+   \   000C                  REQUIRE _A_MK0
+     56          
+     57          
+     58          
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     59          void sub_2084(void)
+   \                     sub_2084:
+     60          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+     61             sub_208F();
+   \   0000   9A....         CALL      sub_208F
+     62             while( !(IF0H & 0x20)  );
+   \                     ??sub_2084_0:
+   \   0003   F4E1           MOV       A,0xFFE1
+   \   0005   5D20           AND       A,#32
+   \   0007   4D00           CMP       A,#0
+   \   0009   ADF8           BZ        ??sub_2084_0
+     63             sub_2093();
+   \   000B   9A....         CALL      sub_2093
+     64          }
+   \   000E   AF             RET       
+   \   000F                  REQUIRE ?CL78K_V4_6_L00
+   \   000F                  REQUIRE _A_IF0
+     65          
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     66          void sub_208F(void)
+   \                     sub_208F:
+     67          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+     68              TMC00 = 0x0C;
+   \   0000   13BA0C         MOV       0xFFBA,#12
+     69          }
+   \   0003   AF             RET       
+   \   0004                  REQUIRE ?CL78K_V4_6_L00
+   \   0004                  REQUIRE _A_TMC00
+     70          
+     71          //请中断标志
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     72          void sub_2093(void)
+   \                     sub_2093:
+     73          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+     74              TMC00 = 0x00;
+   \   0000   13BA00         MOV       0xFFBA,#0
+     75              IF0H &= ~0x20;
+   \   0003   715BE1         CLR1      0xFFE1.5
+     76          }
+   \   0006   AF             RET       
+   \   0007                  REQUIRE ?CL78K_V4_6_L00
+   \   0007                  REQUIRE _A_TMC00
+   \   0007                  REQUIRE _A_IF0
+     77          
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     78          void sub_209A(void)
+   \                     sub_209A:
+     79          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+     80              TMC50 |= 0x80;      //需确认07 代表第几位
+   \   0000   717A6B         SET1      0xFF6B.7
+     81          }
+   \   0003   AF             RET       
+   \   0004                  REQUIRE ?CL78K_V4_6_L00
+   \   0004                  REQUIRE _A_TMC50
+     82          
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     83          void sub_2160(void)
+   \                     sub_2160:
+     84          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+     85              //int ADC_data, ADC_data_sum;
+     86              IF1L &= ~0x01;      			// ADIF 清零
+   \   0000   710BE2         CLR1      0xFFE2.0
+     87              ADM |= 0x80;       			//需确认07 代表第几位
+   \   0003   717A28         SET1      0xFF28.7
+     88              while( !(IF1L & 0x01) );
+   \                     ??sub_2160_0:
+   \   0006   F4E2           MOV       A,0xFFE2
+   \   0008   5D01           AND       A,#1
+   \   000A   4D00           CMP       A,#0
+   \   000C   ADF8           BZ        ??sub_2160_0
+     89              byte_FE70 = ADCR; 
+   \   000E   8908           MOVW      AX,S:0xFF08
+   \   0010   03....         MOVW      byte_FE70,AX
+     90              ADM &= ~0x80;
+   \   0013   717B28         CLR1      0xFF28.7
+     91              byte_FE73 += byte_FE70;    		//累加
+   \   0016   02....         MOVW      AX,byte_FE70
+   \   0019   30             XCH       A,X
+   \   001A   08....         ADD       A,byte_FE73
+   \   001D   30             XCH       A,X
+   \   001E   28....         ADDC      A,byte_FE73+1
+   \   0021   03....         MOVW      byte_FE73,AX
+     92          }
+   \   0024   AF             RET       
+   \   0025                  REQUIRE ?CL78K_V4_6_L00
+   \   0025                  REQUIRE _A_ADCR
+   \   0025                  REQUIRE _A_ADM
+   \   0025                  REQUIRE _A_IF1
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+     93          unsigned char byte_FEC8,byte_FEC9,byte_FEA0,byte_FEB7;
+   \                     byte_FEC8:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FEC9:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FEA0:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FEB7:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment CODE, align 1, keep-with-next
+     94          void sub_2186(char temp_D, char temp_E, char temp_B)
+   \                     sub_2186:
+     95          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000   B5             PUSH      DE
+   \   0001                  ; Total Auto size: 0
+   \   0001   74             MOV       E,A
+     96              TMHMD1 = 0x40;
+   \   0002   136C40         MOV       0xFF6C,#64
+     97              CMP01  = 0x27;
+   \   0005   111A27         MOV       S:0xFF1A,#39
+     98              IF0H   &= ~0x04;
+   \   0008   712BE1         CLR1      0xFFE1.2
+     99              MK0H   &= ~0x04;
+   \   000B   712BE5         CLR1      0xFFE5.2
+    100          	
+    101              TMHMD1 = 0xC0;
+   \   000E   136CC0         MOV       0xFF6C,#192
+    102              EI();
+                     ^
+Warning[Pe223]: function "EI" declared implicitly
+   \   0011   9A....         CALL      `EI`
+    103              byte_FE62 &= ~0x08;
+   \   0014   16....         MOVW      HL,#byte_FE62
+   \   0017   71B3           CLR1      [HL].3
+    104              P3 = byte_FE62;
+   \   0019   8E....         MOV       A,byte_FE62
+   \   001C   F203           MOV       S:0xFF03,A
+    105              PM3 &= ~0x08;    //PM33   当 P17/TO50/TI50 和 P33/TO51/TI51/INTP4 引脚用于定时器输出时，将 PM17 和 PM33 以及 P17 与 P33 的输出 锁存器清零
+   \   001E   713B23         CLR1      0xFF23.3
+    106              TMC51 = 0x07;
+   \   0021   134307         MOV       0xFF43,#7
+    107              TCL51 = 0x04;
+   \   0024   138C04         MOV       0xFF8C,#4
+    108              CR51 = 0x63;
+   \   0027   134163         MOV       0xFF41,#99
+    109              TMC51 = 0x87;
+   \   002A   134387         MOV       0xFF43,#135
+   \   002D   FA03           BR        ??main_2
+    110              do 
+    111              {
+    112                  byte_FEC8 = 0;
+    113                  if( !(temp_B & 0x01) )
+    114          	{
+    115                      byte_FEC9 = temp_E;
+    116          	}
+    117                  else 
+    118          	{
+    119                      byte_FEC9 = temp_D;
+    120          	}
+    121          	//loc_21BB
+    122          	do
+    123          	{
+    124          		if( !(MK0H & 0x04) )
+    125          		{
+    126          			  WDTE = 0xAC;
+    127          		}
+    128          	 ///loc_21C2
+    129          		if( !(byte_FEA0 & 0x02) )
+    130          		{
+    131          			 if( byte_FEB7 ==  0 )
+    132          			 {
+    133          				//loc_21E1:
+    134                                        goto loc_21E1;
+    135          			 }
+    136          		}
+    137          		else
+    138          		{
+    139          			if( byte_FEC8 > byte_FEC9 )
+    140          					break;
+    141          		}
+    142          		
+    143          	}while( 1);
+    144          	temp_B--;
+    145          	if( temp_B == 0 ) 
+    146          		goto loc_21E1;
+    147          	if( temp_B & 0x01 )
+    148          	{
+    149          		TMC51 = 0x87;
+    150          	}
+    151          	else
+    152          	{
+    153          		TMC51 = 0x7;
+   \                     ??sub_2186_0:
+   \   002F   134307         MOV       0xFF43,#7
+    154          	}
+    155          }while(1);
+   \                     ??main_2:
+   \   0032   A100           MOV       A,#0
+   \   0034   9E....         MOV       byte_FEC8,A
+   \   0037   62             MOV       A,C
+   \   0038   5D01           AND       A,#1
+   \   003A   4D00           CMP       A,#0
+   \   003C   BD06           BNZ       ??main_3
+   \   003E   63             MOV       A,B
+   \   003F   9E....         MOV       byte_FEC9,A
+   \   0042   FA04           BR        ??main_4
+   \                     ??main_3:
+   \   0044   64             MOV       A,E
+   \   0045   9E....         MOV       byte_FEC9,A
+   \                     ??main_4:
+   \   0048   F4E5           MOV       A,0xFFE5
+   \   004A   5D04           AND       A,#4
+   \   004C   4D00           CMP       A,#0
+   \   004E   BD03           BNZ       ??main_5
+   \   0050   1399AC         MOV       0xFF99,#172
+   \                     ??main_5:
+   \   0053   16....         MOVW      HL,#byte_FEA0
+   \   0056   7194           MOV1      CY,[HL].1
+   \   0058   8D15           BC        ??main_6
+   \   005A   8E....         MOV       A,byte_FEB7
+   \   005D   4D00           CMP       A,#0
+   \   005F   BDE7           BNZ       ??main_4
+    156          loc_21E1:	
+    157          	DI();
+                 	^
+Warning[Pe223]: function "DI" declared implicitly
+   \                     ??sub_2186_1:
+   \   0061   9A....         CALL      `DI`
+    158          	TMC51 = 0x07;
+   \   0064   134307         MOV       0xFF43,#7
+    159          	TMHMD1 = 0x40;
+   \   0067   136C40         MOV       0xFF6C,#64
+    160          	MK0H |= 0x40;
+   \   006A   716AE5         SET1      0xFFE5.6
+    161          }
+   \   006D   B4             POP       DE
+   \   006E   AF             RET       
+   \                     ??main_6:
+   \   006F   8E....         MOV       A,byte_FEC9
+   \   0072   48....         CMP       A,byte_FEC8
+   \   0075   9DD1           BNC       ??main_4
+   \   0077   52             DEC       C
+   \   0078   62             MOV       A,C
+   \   0079   4D00           CMP       A,#0
+   \   007B   BD02           BNZ       ??main_7
+   \   007D   FAE2           BR        ??sub_2186_1
+   \                     ??main_7:
+   \   007F   62             MOV       A,C
+   \   0080   5D01           AND       A,#1
+   \   0082   4D00           CMP       A,#0
+   \   0084   ADA9           BZ        ??sub_2186_0
+   \   0086   134387         MOV       0xFF43,#135
+   \   0089   FAA7           BR        ??main_2
+   \   008B                  REQUIRE ?CL78K_V4_6_L00
+   \   008B                  REQUIRE _A_TMHMD1
+   \   008B                  REQUIRE _A_TCL51
+   \   008B                  REQUIRE _A_WDTE
+   \   008B                  REQUIRE _A_P3
+   \   008B                  REQUIRE _A_CMP01
+   \   008B                  REQUIRE _A_PM3
+   \   008B                  REQUIRE _A_CR51
+   \   008B                  REQUIRE _A_TMC51
+   \   008B                  REQUIRE _A_IF0
+   \   008B                  REQUIRE _A_MK0
+    162          //OK	
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+    163          unsigned char num_FE20[32] ={0};
+   \                     num_FE20:
+   \   0000                  DS 32
+   \   0020                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 2, align-sorted
+    164          unsigned short int word_FE32;
+   \                     word_FE32:
+   \   0000                  DS 2
+   \   0002                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+    165          unsigned char byte_FEC0,byte_FD40,byte_FD43,byte_FD57,byte_FE91,byte_FEB6,byte_FE90,byte_FE3E,byte_FE92,byte_FE31,byte_FE34,byte_FE35;
+   \                     byte_FEC0:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FD40:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FD43:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FD57:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FE91:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FEB6:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FE90:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FE3E:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FE92:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FE31:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FE34:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FE35:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    166          void sub_2600(void)
+   \                     sub_2600:
+    167          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000   B3             PUSH      BC
+   \   0001                  ; Total Auto size: 0
+    168                  unsigned char i;
+    169          	//unsigned char *p = num_FE20;
+    170          	if( byte_FEC0 == 10 )
+   \   0001   8E....         MOV       A,byte_FEC0
+   \   0004   4D0A           CMP       A,#10
+   \   0006   BD08           BNZ       ??main_8
+    171          	{
+    172          		byte_FD40 = 0;
+   \   0008   A100           MOV       A,#0
+   \   000A   9E....         MOV       byte_FD40,A
+   \   000D   9B....         BR        N:??main_9
+    173          	}
+    174          	//B loc_260B:
+    175          	else
+    176          	{
+    177          		if( byte_FD43 & 0x01 )
+   \                     ??main_8:
+   \   0010   16....         MOVW      HL,#byte_FD43
+   \   0013   7184           MOV1      CY,[HL].0
+   \   0015   8D03           BC        $+5
+   \   0017   9B....         BR        N:??main_10
+    178          		{
+    179          			sub_2948();
+   \   001A   9A....         CALL      sub_2948
+    180          			sub_27A1();
+   \   001D   9A....         CALL      sub_27A1
+    181          			sub_27EF();
+   \   0020   9A....         CALL      sub_27EF
+    182          			DI();
+                 			^
+Warning[Pe223]: function "DI" declared implicitly
+   \   0023   9A....         CALL      `DI`
+    183          			sub_27A8();
+   \   0026   9A....         CALL      sub_27A8
+    184          			sub_283D();
+   \   0029   9A....         CALL      sub_283D
+    185          			DI();
+   \   002C   9A....         CALL      `DI`
+    186          			sub_27A1();
+   \   002F   9A....         CALL      sub_27A1
+    187          			sub_28D7();
+   \   0032   9A....         CALL      sub_28D7
+    188          			DI();
+   \   0035   9A....         CALL      `DI`
+    189          			sub_27A8();
+   \   0038   9A....         CALL      sub_27A8
+    190          			if(  byte_FD57 & 0x08  )
+   \   003B   16....         MOVW      HL,#byte_FD57
+   \   003E   71B4           MOV1      CY,[HL].3
+   \   0040   9D03           BNC       ??main_11
+    191          			{
+    192          				return;
+   \   0042   9B....         BR        N:??main_9
+    193          			}
+    194          			else
+    195          			{
+    196          				if( !( byte_FD43 & 0x04 ) )
+   \                     ??main_11:
+   \   0045   16....         MOVW      HL,#byte_FD43
+   \   0048   71A4           MOV1      CY,[HL].2
+   \   004A   8D03           BC        ??main_12
+    197          				{
+    198          					return;
+   \   004C   9B....         BR        N:??main_9
+    199          				}
+    200          				else
+    201          				{
+    202          					byte_FE91 &= ~0x01;
+   \                     ??main_12:
+   \   004F   16....         MOVW      HL,#byte_FE91
+   \   0052   7183           CLR1      [HL].0
+   \   0054   FA05           BR        ??main_13
+    203          					while(1)
+    204          					{
+    205          						if( byte_FEB6 != 0 )
+    206          						{
+    207          							byte_FD57 = ( byte_FD57 | 0x01 );
+    208          							return;
+    209          						}
+    210          						//else
+    211          						{
+    212          							for( i=0; i <= 32; i++ )
+    213          							{
+    214          								num_FE20[i] = 5;
+    215          							}
+    216          							
+    217          							sub_7F3();
+    218          							if( !( byte_FE90 & 0x02) )
+    219          							{
+    220          								sub_8E5();
+    221          								if( !(byte_FE90 & 0x08) )
+    222          								{
+    223          									byte_FE91 &= ~0x01;
+    224          									byte_FE3E &= 0xF0;
+    225          									sub_95D();
+    226          									if( byte_FE90 & 0x10 )
+    227          									{
+    228          										byte_FE92 |= 0x02;
+    229          										
+    230          										for( i= 22; i<= 32; i++ )
+    231          										{
+    232          											num_FE20[i] = 0;
+    233          										}
+    234          										num_FE20[24] = 0x20;
+    235          										num_FE20[25] = 0x20;
+    236          										num_FE20[31] = 0x04;
+    237          										
+    238          									}
+    239          									//loc_268F
+    240          									else{
+    241          										byte_FE92 &= ~0x02;
+    242          									}
+    243          									//loc_2691
+    244          									if( byte_FEC0 != 0x0A )
+    245          									{
+    246          										sub_80D();
+    247          									}
+    248          									//loc_2699
+    249          									if( byte_FE31 <= 0x10 )
+    250          									{
+    251          										byte_FD57 = ( byte_FD57 | 0x02 );
+    252          										return;
+    253          									}
+    254          									//loc_26D0
+    255          									else
+    256          									{
+    257          										break;
+    258          									}
+    259          									
+    260          								}
+    261          								//loc_26A7
+    262          								else
+    263          								{
+    264          									if( ( ( byte_FE34 & 0x0F) == 0x01 ) && ( byte_FE35 == 0x11 ) )
+    265          									{
+    266          										byte_FD57 |= 0x04;
+    267          										return;
+    268          									}
+    269          									//loc_26BE
+    270          									
+    271          								}
+    272          							}
+    273          							//loc_26BE
+    274          							else
+    275          							{
+    276          								if( byte_FE91 & 0x01 )
+    277          								{
+    278          									byte_FD57 |= 0x02;
+    279          									return;
+    280          								}
+    281          								//loc_26CB
+    282          								else
+    283          								{
+    284          								  byte_FE91 |= 0x01;
+   \                     ??sub_2600_0:
+   \   0056   16....         MOVW      HL,#byte_FE91
+   \   0059   7182           SET1      [HL].0
+    285          								}
+   \                     ??main_13:
+   \   005B   8E....         MOV       A,byte_FEB6
+   \   005E   4D00           CMP       A,#0
+   \   0060   AD08           BZ        ??main_14
+   \   0062   16....         MOVW      HL,#byte_FD57
+   \   0065   7182           SET1      [HL].0
+   \   0067   9B....         BR        N:??main_9
+   \                     ??main_14:
+   \   006A   A200           MOV       C,#0
+   \   006C   FA07           BR        ??main_15
+   \                     ??sub_2600_1:
+   \   006E   A105           MOV       A,#5
+   \   0070   16....         MOVW      HL,#num_FE20
+   \   0073   BA             MOV       [HL+C],A
+   \   0074   42             INC       C
+   \                     ??main_15:
+   \   0075   62             MOV       A,C
+   \   0076   4D21           CMP       A,#33
+   \   0078   72             MOV       C,A
+   \   0079   8DF3           BC        ??sub_2600_1
+   \   007B   9A....         CALL      sub_7F3
+   \   007E   16....         MOVW      HL,#byte_FE90
+   \   0081   7194           MOV1      CY,[HL].1
+   \   0083   9D03           BNC       $+5
+   \   0085   9B....         BR        N:??main_16
+   \   0088   9A....         CALL      sub_8E5
+   \   008B   16....         MOVW      HL,#byte_FE90
+   \   008E   71B4           MOV1      CY,[HL].3
+   \   0090   8D69           BC        ??main_17
+   \   0092   16....         MOVW      HL,#byte_FE91
+   \   0095   7183           CLR1      [HL].0
+   \   0097   8E....         MOV       A,byte_FE3E
+   \   009A   5DF0           AND       A,#240
+   \   009C   9E....         MOV       byte_FE3E,A
+   \   009F   9A....         CALL      sub_95D
+   \   00A2   16....         MOVW      HL,#byte_FE90
+   \   00A5   71C4           MOV1      CY,[HL].4
+   \   00A7   9D27           BNC       ??main_18
+   \   00A9   16....         MOVW      HL,#byte_FE92
+   \   00AC   7192           SET1      [HL].1
+   \   00AE   A216           MOV       C,#22
+   \   00B0   FA07           BR        ??main_19
+   \                     ??sub_2600_2:
+   \   00B2   A100           MOV       A,#0
+   \   00B4   16....         MOVW      HL,#num_FE20
+   \   00B7   BA             MOV       [HL+C],A
+   \   00B8   42             INC       C
+   \                     ??main_19:
+   \   00B9   62             MOV       A,C
+   \   00BA   4D21           CMP       A,#33
+   \   00BC   72             MOV       C,A
+   \   00BD   8DF3           BC        ??sub_2600_2
+   \   00BF   A120           MOV       A,#32
+   \   00C1   9E....         MOV       num_FE20+24,A
+   \   00C4   A120           MOV       A,#32
+   \   00C6   9E....         MOV       num_FE20+25,A
+   \   00C9   A104           MOV       A,#4
+   \   00CB   9E....         MOV       num_FE20+31,A
+   \   00CE   FA05           BR        ??main_20
+   \                     ??main_18:
+   \   00D0   16....         MOVW      HL,#byte_FE92
+   \   00D3   7193           CLR1      [HL].1
+   \                     ??main_20:
+   \   00D5   8E....         MOV       A,byte_FEC0
+   \   00D8   4D0A           CMP       A,#10
+   \   00DA   AD03           BZ        ??main_21
+   \   00DC   9A....         CALL      sub_80D
+   \                     ??main_21:
+   \   00DF   8E....         MOV       A,byte_FE31
+   \   00E2   4D11           CMP       A,#17
+   \   00E4   9D07           BNC       ??main_22
+   \   00E6   16....         MOVW      HL,#byte_FD57
+   \   00E9   7192           SET1      [HL].1
+   \   00EB   FA4C           BR        ??main_9
+    286          							}
+    287          						}
+    288          					}
+    289          					
+    290          					//loc_26D0
+    291          					if( word_FE32 != 0 )
+   \                     ??main_22:
+   \   00ED   02....         MOVW      AX,word_FE32
+   \   00F0   6168           OR        A,X
+   \   00F2   BD34           BNZ       ??main_23
+    292          					{
+    293          						byte_FE92 |= 0x04;
+    294          						return;
+    295          					}
+    296          					else
+    297          					{
+    298          						byte_FE92 &= ~0x04;
+   \   00F4   16....         MOVW      HL,#byte_FE92
+   \   00F7   71A3           CLR1      [HL].2
+    299          						return;
+   \   00F9   FA3E           BR        ??main_9
+    300          					}
+   \                     ??main_17:
+   \   00FB   8E....         MOV       A,byte_FE34
+   \   00FE   5D0F           AND       A,#15
+   \   0100   51             DEC       A
+   \   0101   AD03           BZ        $+5
+   \   0103   9B....         BR        N:??main_13
+   \   0106   8E....         MOV       A,byte_FE35
+   \   0109   4D11           CMP       A,#17
+   \   010B   AD03           BZ        $+5
+   \   010D   9B....         BR        N:??main_13
+   \   0110   16....         MOVW      HL,#byte_FD57
+   \   0113   71A2           SET1      [HL].2
+   \   0115   FA22           BR        ??main_9
+   \                     ??main_16:
+   \   0117   16....         MOVW      HL,#byte_FE91
+   \   011A   7184           MOV1      CY,[HL].0
+   \   011C   8D03           BC        $+5
+   \   011E   9B....         BR        N:??sub_2600_0
+   \   0121   16....         MOVW      HL,#byte_FD57
+   \   0124   7192           SET1      [HL].1
+   \   0126   FA11           BR        ??main_9
+   \                     ??main_23:
+   \   0128   16....         MOVW      HL,#byte_FE92
+   \   012B   71A2           SET1      [HL].2
+   \   012D   FA0A           BR        ??main_9
+    301          				}
+    302          			}
+    303          		}
+    304          		else
+    305          		{
+    306          			if( byte_FD40 != 6 )
+   \                     ??main_10:
+   \   012F   8E....         MOV       A,byte_FD40
+   \   0132   4D06           CMP       A,#6
+   \   0134   AD03           BZ        ??main_9
+    307          			{
+    308          				sub_26ED();
+   \   0136   9A....         CALL      sub_26ED
+    309          			}
+    310          		}
+    311          	}
+    312          }
+   \                     ??main_9:
+   \   0139   B2             POP       BC
+   \   013A   AF             RET       
+   \   013B                  REQUIRE ?CL78K_V4_6_L00
+
+   \                                 In  segment NEAR_I, align 1, align-sorted
+    313          unsigned char num_2480[7] = {0x40,0x1E,0x00,0x1E,0x00,0x1F,0x1F};
+   \                     num_2480:
+   \   0000                  DS 7
+   \   0007                  REQUIRE `?<Initializer for num_2480>`
+   \   0007                  REQUIRE __INIT_NEAR_I
+
+   \                                 In  segment NEAR_I, align 1, align-sorted
+    314          unsigned char num_2400[] = {    0x04,0x00, 
+   \                     num_2400:
+   \   0000                  DS 64
+   \   0040                  REQUIRE `?<Initializer for num_2400>`
+   \   0040                  REQUIRE __INIT_NEAR_I
+    315                                          0x05,0x76,
+    316                                          0x05,0x70,
+    317          				0x05,0x69,
+    318          				0x05,0x63,
+    319          				0x05,0x5E,
+    320          				0x05,0x58,
+    321          				0x05,0x53,
+    322          				0x05,0x4F,
+    323          				0x05,0x4A,
+    324          				0x05,0x46,
+    325          				0x05,0x42,
+    326          				0x04,0xFC,
+    327          				0x04,0xEE,
+    328          				0x04,0xE0,
+    329          				0x04,0xD4,
+    330          				0x04,0xC8,
+    331          				0x04,0xBD,
+    332          				0x04,0xB2,
+    333          				0x04,0xA8,
+    334          				0x04,0x9E,
+    335          				0x04,0x95,
+    336          				0x04,0x8D,
+    337          				0x04,0x85,
+    338          				0x04,0x7E,
+    339          				0x04,0x76,
+    340          				0x04,0x70,
+    341          				0x04,0x69,
+    342          				0x04,0x63,
+    343          				0x04,0x5E,
+    344          				0x04,0x58,
+    345          				0x04,0x00       };
+    346          
+    347          //    地址：FD00
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    348          void sub_26ED(void)
+   \                     sub_26ED:
+    349          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000   B3             PUSH      BC
+   \   0001   B5             PUSH      DE
+   \   0002                  ; Total Auto size: 0
+    350          	unsigned char temp_D,temp_E;
+    351          	unsigned char * temp_DE;
+    352              
+    353          	TMHMD1 = 0x40;
+   \   0002   136C40         MOV       0xFF6C,#64
+    354          	if( byte_FD40 == 4 )
+   \   0005   8E....         MOV       A,byte_FD40
+   \   0008   4D04           CMP       A,#4
+   \   000A   BD06           BNZ       ??main_24
+    355          	{
+    356          		temp_D = 0xFD;
+   \   000C   A2FD           MOV       C,#253
+    357          	    temp_E = 0x00;
+   \   000E   A300           MOV       B,#0
+   \   0010   FA15           BR        ??main_25
+    358          	}
+    359          	//loc_26FC
+    360          	else
+    361          	{
+    362          		if( byte_FD40 == 6 )
+   \                     ??main_24:
+   \   0012   8E....         MOV       A,byte_FD40
+   \   0015   4D06           CMP       A,#6
+   \   0017   BD06           BNZ       ??main_26
+    363          		{
+    364          			temp_D = 0x24;    //数组
+   \   0019   A224           MOV       C,#36
+    365          			temp_E = 0x80;
+   \   001B   A380           MOV       B,#128
+   \   001D   FA08           BR        ??main_25
+    366          		}
+    367          		//loc_2706
+    368          		else
+    369          		{
+    370          			temp_D = byte_FD40 + 0x20;
+   \                     ??main_26:
+   \   001F   A120           MOV       A,#32
+   \   0021   08....         ADD       A,byte_FD40
+   \   0024   72             MOV       C,A
+    371          			temp_E = 0x00;
+   \   0025   A300           MOV       B,#0
+    372          			//temp_D = (unsigned char *)( temp_D << 8) )
+    373          		}
+    374          	}
+    375          	//loc_270B
+    376          	temp_DE = (unsigned char *) ((temp_D <<8) + temp_E);
+   \                     ??main_25:
+   \   0027   63             MOV       A,B
+   \   0028   76             MOV       L,A
+   \   0029   62             MOV       A,C
+   \   002A   A700           MOV       H,#0
+   \   002C   70             MOV       X,A
+   \   002D   A100           MOV       A,#0
+   \   002F   60             MOV       A,X
+   \   0030   A000           MOV       X,#0
+   \   0032   30             XCH       A,X
+   \   0033   610E           ADD       A,L
+   \   0035   30             XCH       A,X
+   \   0036   612F           ADDC      A,H
+   \   0038   D4             MOVW      DE,AX
+    377          	if( *temp_DE != 0 )
+   \   0039   85             MOV       A,[DE]
+   \   003A   4D00           CMP       A,#0
+   \   003C   BD03           BNZ       $+5
+   \   003E   9B....         BR        N:??main_27
+    378          	{
+    379          		// loc_2713
+    380          		CMP01 = *temp_DE;      //需确认
+   \   0041   85             MOV       A,[DE]
+   \   0042   F21A           MOV       S:0xFF1A,A
+    381          		IF0H &= ~0x04;          //WTIIF  中断请求标志位
+   \   0044   712BE1         CLR1      0xFFE1.2
+    382          		MK0H &= ~0x04;          //WTIMK  中断屏蔽标志位
+   \   0047   712BE5         CLR1      0xFFE5.2
+    383          		TMHMD1 = 0xC0;          // 定时器
+   \   004A   136CC0         MOV       0xFF6C,#192
+    384          		EI();
+                 		^
+Warning[Pe223]: function "EI" declared implicitly
+   \   004D   9A....         CALL      `EI`
+    385          		byte_FE62 &= ~0x08;    
+   \   0050   16....         MOVW      HL,#byte_FE62
+   \   0053   71B3           CLR1      [HL].3
+    386          		P3 = byte_FE62;        //晶振相关
+   \   0055   8E....         MOV       A,byte_FE62
+   \   0058   F203           MOV       S:0xFF03,A
+    387          		PM3 &= ~0x08;           // 输出
+   \   005A   713B23         CLR1      0xFF23.3
+    388          		temp_DE++;        //这里是地址加一
+   \   005D   84             INCW      DE
+    389          		
+    390          		do
+    391          		{
+    392          			byte_FEC8 = 0;
+   \                     ??sub_26ED_0:
+   \   005E   A100           MOV       A,#0
+   \   0060   9E....         MOV       byte_FEC8,A
+    393          			if( ( (*(temp_DE)) & 0x20 )) 
+   \   0063   B5             PUSH      DE
+   \   0064   B6             POP       HL
+   \   0065   31D713         BF        [HL].5, ??main_28
+    394          			{
+    395          				if( ( (*(temp_DE)) & 0x40 ) )
+   \   0068   B5             PUSH      DE
+   \   0069   B6             POP       HL
+   \   006A   31E707         BF        [HL].6, ??main_29
+    396          				{
+    397          					byte_FEC9 = 0x10;
+   \   006D   A110           MOV       A,#16
+   \   006F   9E....         MOV       byte_FEC9,A
+   \   0072   FA18           BR        ??main_30
+    398          				}
+    399          				else  //loc_2744
+    400          				{
+    401          					byte_FEC9 = 0x04;
+   \                     ??main_29:
+   \   0074   A104           MOV       A,#4
+   \   0076   9E....         MOV       byte_FEC9,A
+   \   0079   FA11           BR        ??main_30
+    402          				}
+    403          			}
+    404          			else  //loc_273B
+    405          			{
+    406          				if( ( (*(temp_DE)) & 0x40 ) )
+   \                     ??main_28:
+   \   007B   B5             PUSH      DE
+   \   007C   B6             POP       HL
+   \   007D   31E707         BF        [HL].6, ??main_31
+    407          				{
+    408          					byte_FEC9 = 0x08;
+   \   0080   A108           MOV       A,#8
+   \   0082   9E....         MOV       byte_FEC9,A
+   \   0085   FA05           BR        ??main_30
+    409          				}
+    410          				else   //loc_274A
+    411          				{
+    412          					byte_FEC9 = 0x02;
+   \                     ??main_31:
+   \   0087   A102           MOV       A,#2
+   \   0089   9E....         MOV       byte_FEC9,A
+    413          				}
+    414          			}
+    415          			//loc_274E
+    416          			if( !((*(temp_DE)) & 0x80) )
+   \                     ??main_30:
+   \   008C   B5             PUSH      DE
+   \   008D   B6             POP       HL
+   \   008E   31F640         BT        [HL].7, ??main_32
+    417          			{
+    418          				//loc_2754
+    419          				if( ( (*(temp_DE)) & 0x1F ) == 0x1F ) //{0x40,0x1E,0x00,0x1E,0x00,0x1F,0x1F};
+   \   0091   85             MOV       A,[DE]
+   \   0092   5D1F           AND       A,#31
+   \   0094   4D1F           CMP       A,#31
+   \   0096   BD15           BNZ       ??main_33
+    420          				{
+    421          					if( (byte_FD43 & 0x01) )
+   \   0098   16....         MOVW      HL,#byte_FD43
+   \   009B   7184           MOV1      CY,[HL].0
+   \   009D   9D02           BNC       ??main_34
+    422          					{
+    423          						goto loc_2795;
+   \   009F   FA70           BR        ??main_27
+    424          					}
+    425          					temp_DE++;   // 数组序号
+   \                     ??main_34:
+   \   00A1   84             INCW      DE
+    426          					if( ( (*(temp_DE)) & 0x1F ) == 0x1F )
+   \   00A2   85             MOV       A,[DE]
+   \   00A3   5D1F           AND       A,#31
+   \   00A5   4D1F           CMP       A,#31
+   \   00A7   BD02           BNZ       ??main_35
+    427          					{
+    428          						goto loc_2795;
+   \   00A9   FA66           BR        ??main_27
+    429          					}
+    430          					else
+    431          						continue;
+   \                     ??main_35:
+   \   00AB   FA41           BR        ??main_36
+    432          				}
+    433          				else  //loc_276A
+    434          				{
+    435          					TMC51 = 0x07;      //定时器
+   \                     ??main_33:
+   \   00AD   134307         MOV       0xFF43,#7
+    436          					if( (*(temp_DE))  != 0 )
+   \   00B0   85             MOV       A,[DE]
+   \   00B1   4D00           CMP       A,#0
+   \   00B3   AD1C           BZ        ??main_32
+    437          					{
+    438          						TCL51 = *((unsigned char *)((0x24 <<8) + ((*(temp_DE)<< 1))) );   //时钟选择
+   \   00B5   85             MOV       A,[DE]
+   \   00B6   A002           MOV       X,#2
+   \   00B8   3188           MULU      X
+   \   00BA   CA0024         ADDW      AX,#9216
+   \   00BD   D6             MOVW      HL,AX
+   \   00BE   87             MOV       A,[HL]
+   \   00BF   F68C           MOV       0xFF8C,A
+    439          						CR51 = *((unsigned char *)((0x24 <<8) + ((*(temp_DE)<< 1))) + 1);
+   \   00C1   85             MOV       A,[DE]
+   \   00C2   A002           MOV       X,#2
+   \   00C4   3188           MULU      X
+   \   00C6   CA0024         ADDW      AX,#9216
+   \   00C9   80             INCW      AX
+   \   00CA   D6             MOVW      HL,AX
+   \   00CB   87             MOV       A,[HL]
+   \   00CC   F641           MOV       0xFF41,A
+    440          						TMC51 = 0x87;
+   \   00CE   134387         MOV       0xFF43,#135
+    441          					}
+    442          					
+    443          				}
+    444          			}
+    445          			//loc_277F
+    446          			do
+    447          			{
+    448          				if( !(MK0H & 0x04) )
+   \                     ??main_32:
+   \   00D1   F4E5           MOV       A,0xFFE5
+   \   00D3   5D04           AND       A,#4
+   \   00D5   4D00           CMP       A,#0
+   \   00D7   BD03           BNZ       ??main_37
+    449          				{
+    450          					WDTE = 0xAC;   //清看门狗
+   \   00D9   1399AC         MOV       0xFF99,#172
+    451          				}
+    452          				//loc_2786
+    453          				if( byte_FEB7 )
+   \                     ??main_37:
+   \   00DC   8E....         MOV       A,byte_FEB7
+   \   00DF   4D00           CMP       A,#0
+   \   00E1   AD02           BZ        ??main_38
+    454          				{
+    455          					goto loc_2795;
+   \   00E3   FA2C           BR        ??main_27
+    456          				}
+    457          			}while(byte_FEC8 < byte_FEC9);	  //  byte_FEC8 计数器 
+   \                     ??main_38:
+   \   00E5   8E....         MOV       A,byte_FEC8
+   \   00E8   48....         CMP       A,byte_FEC9
+   \   00EB   8DE4           BC        ??main_32
+    458          			temp_DE++;
+   \   00ED   84             INCW      DE
+    459          		}while((temp_DE- (unsigned char *) ((temp_D <<8) + temp_E)) < 256);
+   \                     ??main_36:
+   \   00EE   63             MOV       A,B
+   \   00EF   76             MOV       L,A
+   \   00F0   62             MOV       A,C
+   \   00F1   A700           MOV       H,#0
+   \   00F3   70             MOV       X,A
+   \   00F4   A100           MOV       A,#0
+   \   00F6   60             MOV       A,X
+   \   00F7   A000           MOV       X,#0
+   \   00F9   30             XCH       A,X
+   \   00FA   610E           ADD       A,L
+   \   00FC   30             XCH       A,X
+   \   00FD   612F           ADDC      A,H
+   \   00FF   D6             MOVW      HL,AX
+   \   0100   C4             MOVW      AX,DE
+   \   0101   30             XCH       A,X
+   \   0102   611E           SUB       A,L
+   \   0104   30             XCH       A,X
+   \   0105   613F           SUBC      A,H
+   \   0107   7D80           XOR       A,#128
+   \   0109   DA0081         SUBW      AX,#33024
+   \   010C   9D03           BNC       $+5
+   \   010E   9B....         BR        N:??sub_26ED_0
+    460          		
+    461          	}
+    462          	//loc_2795
+    463          	loc_2795:
+    464          	 TMC51 = 0x07;         
+   \                     ??main_27:
+   \   0111   134307         MOV       0xFF43,#7
+    465          	 TMHMD1 = 0x40;
+   \   0114   136C40         MOV       0xFF6C,#64
+    466          	 MK0H |= 0x04;
+   \   0117   712AE5         SET1      0xFFE5.2
+    467          	 DI();
+                 	 ^
+Warning[Pe223]: function "DI" declared implicitly
+   \   011A   9A....         CALL      `DI`
+    468          }
+   \   011D   B4             POP       DE
+   \   011E   B2             POP       BC
+   \   011F   AF             RET       
+   \   0120                  REQUIRE ?CL78K_V4_6_L00
+   \   0120                  REQUIRE _A_TMHMD1
+   \   0120                  REQUIRE _A_TCL51
+   \   0120                  REQUIRE _A_WDTE
+   \   0120                  REQUIRE _A_P3
+   \   0120                  REQUIRE _A_CMP01
+   \   0120                  REQUIRE _A_PM3
+   \   0120                  REQUIRE _A_CR51
+   \   0120                  REQUIRE _A_TMC51
+   \   0120                  REQUIRE _A_IF0
+   \   0120                  REQUIRE _A_MK0
+    469          
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+    470          unsigned char byte_FD44,byte_FD45,byte_FD46,byte_FD47,byte_FE82;
+   \                     byte_FD44:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FD45:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FD46:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FD47:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+   \                     byte_FE82:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+    471          // ok
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    472          void sub_27A8(void)
+   \                     sub_27A8:
+    473          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+    474              byte_FE82 &= ~0x04;
+   \   0000   16....         MOVW      HL,#byte_FE82
+   \   0003   71A3           CLR1      [HL].2
+    475              P12 = byte_FE82;
+   \   0005   8E....         MOV       A,byte_FE82
+   \   0008   F20C           MOV       S:0xFF0C,A
+    476          }
+   \   000A   AF             RET       
+   \   000B                  REQUIRE ?CL78K_V4_6_L00
+   \   000B                  REQUIRE _A_P12
+    477          
+    478          //OK
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    479          void sub_27AF(void)
+   \                     sub_27AF:
+    480          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+    481          	DI();
+                 	^
+Warning[Pe223]: function "DI" declared implicitly
+   \   0000   9A....         CALL      `DI`
+    482          	byte_FD44 = MK0L;
+   \   0003   F4E4           MOV       A,0xFFE4
+   \   0005   9E....         MOV       byte_FD44,A
+    483          	byte_FD45 = MK0H;
+   \   0008   F4E5           MOV       A,0xFFE5
+   \   000A   9E....         MOV       byte_FD45,A
+    484          	byte_FD46 = MK1L;
+   \   000D   F4E6           MOV       A,0xFFE6
+   \   000F   9E....         MOV       byte_FD46,A
+    485          	byte_FD47 = MK1H;
+   \   0012   F4E7           MOV       A,0xFFE7
+   \   0014   9E....         MOV       byte_FD47,A
+    486          	MK0L = 0xFF;
+   \   0017   13E4FF         MOV       0xFFE4,#255
+    487          	MK0H = 0xFF;
+   \   001A   13E5FF         MOV       0xFFE5,#255
+    488          	MK1L = 0xFF;
+   \   001D   13E6FF         MOV       0xFFE6,#255
+    489          	MK1H = 0xFF;
+   \   0020   13E7FF         MOV       0xFFE7,#255
+    490          }
+   \   0023   AF             RET       
+   \   0024                  REQUIRE ?CL78K_V4_6_L00
+   \   0024                  REQUIRE _A_MK0
+   \   0024                  REQUIRE _A_MK1
+    491          //ok
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    492          void sub_27D0(void)
+   \                     sub_27D0:
+    493          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+    494          	IF0L = 0x00;
+   \   0000   13E000         MOV       0xFFE0,#0
+    495          	IF0H = 0;
+   \   0003   13E100         MOV       0xFFE1,#0
+    496          	IF1L = 0;
+   \   0006   13E200         MOV       0xFFE2,#0
+    497          	IF1H = 0;
+   \   0009   13E300         MOV       0xFFE3,#0
+    498          	
+    499          	MK0L = byte_FD44;
+   \   000C   8E....         MOV       A,byte_FD44
+   \   000F   F6E4           MOV       0xFFE4,A
+    500          	MK0H = byte_FD45;
+   \   0011   8E....         MOV       A,byte_FD45
+   \   0014   F6E5           MOV       0xFFE5,A
+    501          	MK1L = byte_FD46;
+   \   0016   8E....         MOV       A,byte_FD46
+   \   0019   F6E6           MOV       0xFFE6,A
+    502          	MK1H = byte_FD47;
+   \   001B   8E....         MOV       A,byte_FD47
+   \   001E   F6E7           MOV       0xFFE7,A
+    503          }
+   \   0020   AF             RET       
+   \   0021                  REQUIRE ?CL78K_V4_6_L00
+   \   0021                  REQUIRE _A_IF0
+   \   0021                  REQUIRE _A_IF1
+   \   0021                  REQUIRE _A_MK0
+   \   0021                  REQUIRE _A_MK1
+    504          
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+    505          unsigned char byte_FD50;
+   \                     byte_FD50:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+    506          //OK
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    507          void sub_27EF()
+   \                     sub_27EF:
+    508          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000   B3             PUSH      BC
+   \   0001                  ; Total Auto size: 0
+    509              unsigned char return_2BC9;
+    510          	unsigned char return_2CE8;
+    511          	sub_27AF();
+   \   0001   9A....         CALL      sub_27AF
+    512          	return_2BC9 = sub_2BC9();    //sub_2BC9 是有返回值
+   \   0004   9A....         CALL      sub_2BC9
+    513          	if( return_2BC9 == 0 || ( return_2BC9 == 0x01 ) )
+   \   0007   4D00           CMP       A,#0
+   \   0009   AD03           BZ        ??main_39
+   \   000B   51             DEC       A
+   \   000C   BD29           BNZ       ??main_40
+    514          	{
+    515          		//loc_27FE
+    516          		return_2CE8 = sub_2CE8(byte_FD50,1);
+   \                     ??main_39:
+   \   000E   A301           MOV       B,#1
+   \   0010   8E....         MOV       A,byte_FD50
+   \   0013   9A....         CALL      sub_2CE8
+    517          		if( return_2CE8 == 0 )
+   \   0016   4D00           CMP       A,#0
+   \   0018   BD27           BNZ       ??main_41
+    518          		{
+    519          			if( (byte_FD43 & 0x02) ||  (byte_FD50 != 0x04) )
+   \   001A   16....         MOVW      HL,#byte_FD43
+   \   001D   7194           MOV1      CY,[HL].1
+   \   001F   8D07           BC        ??main_42
+   \   0021   8E....         MOV       A,byte_FD50
+   \   0024   4D04           CMP       A,#4
+   \   0026   AD08           BZ        ??main_43
+    520          			{
+    521          				//loc_2827
+    522          				byte_FD40 = byte_FD50;
+   \                     ??main_42:
+   \   0028   8E....         MOV       A,byte_FD50
+   \   002B   9E....         MOV       byte_FD40,A
+   \   002E   FA11           BR        ??main_41
+    523          			}
+    524          			else 
+    525          				byte_FD40 = 0x01;
+   \                     ??main_43:
+   \   0030   A101           MOV       A,#1
+   \   0032   9E....         MOV       byte_FD40,A
+   \   0035   FA0A           BR        ??main_41
+    526          			
+    527          		}
+    528          	}
+    529          	//loc_280C
+    530          	else
+    531          	{
+    532                 byte_FD40 = 0x06;
+   \                     ??main_40:
+   \   0037   A106           MOV       A,#6
+   \   0039   9E....         MOV       byte_FD40,A
+    533          	   byte_FD50 = 0x06;
+   \   003C   A106           MOV       A,#6
+   \   003E   9E....         MOV       byte_FD50,A
+    534          	}
+    535          	//loc_282D
+    536          	if( byte_FD40 >= 0x07 )
+   \                     ??main_41:
+   \   0041   8E....         MOV       A,byte_FD40
+   \   0044   4D07           CMP       A,#7
+   \   0046   8D05           BC        ??main_44
+    537          	{
+    538          		byte_FD40 = 0x06;
+   \   0048   A106           MOV       A,#6
+   \   004A   9E....         MOV       byte_FD40,A
+    539          	}
+    540          	sub_27D0();
+   \                     ??main_44:
+   \   004D   9A....         CALL      sub_27D0
+    541          	
+    542          }
+   \   0050   B2             POP       BC
+   \   0051   AF             RET       
+   \   0052                  REQUIRE ?CL78K_V4_6_L00
+    543          
+    544          //OK
+    545          //OK
+    546          //注意：byte_FD41 byte_FD42  是一个16位
+
+   \                                 In  segment NEAR_Z, align 2, align-sorted
+    547          unsigned short int byte_FD41;
+   \                     byte_FD41:
+   \   0000                  DS 2
+   \   0002                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    548          void sub_283D(void)
+   \                     sub_283D:
+    549          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+    550          	byte_FD43 &= ~0x04;
+   \   0000   16....         MOVW      HL,#byte_FD43
+   \   0003   71A3           CLR1      [HL].2
+   \   0005   FA53           BR        ??main_45
+    551          	
+    552          	do 
+    553          	{
+    554          		sub_26ED();
+    555          		byte_FD41 = 0;
+    556          		
+    557          		do 
+    558          		{
+    559          			WDTE = 0xAC;
+    560          			sub_EDF();
+    561          			if( byte_FEB7 == 0 )
+    562          			{
+    563          				break;
+    564          			}
+    565          			byte_FD41 += 0x01;
+    566          			if((byte_FD41 & 0xff00) == 0x0600  ) return;
+    567          		}while(1);
+   \                     ??sub_283D_0:
+   \   0007   1399AC         MOV       0xFF99,#172
+   \   000A   9A....         CALL      sub_EDF
+   \   000D   8E....         MOV       A,byte_FEB7
+   \   0010   4D00           CMP       A,#0
+   \   0012   BD0D           BNZ       ??main_46
+    568          		
+    569          	//loc_2871	
+    570          		byte_FD41 = 0;
+   \   0014   100000         MOVW      AX,#0
+   \   0017   03....         MOVW      byte_FD41,AX
+    571          		byte_FD43 |= 0x04;
+   \   001A   16....         MOVW      HL,#byte_FD43
+   \   001D   71A2           SET1      [HL].2
+   \   001F   FA19           BR        ??main_47
+   \                     ??main_46:
+   \   0021   02....         MOVW      AX,byte_FD41
+   \   0024   CA0100         ADDW      AX,#1
+   \   0027   03....         MOVW      byte_FD41,AX
+   \   002A   02....         MOVW      AX,byte_FD41
+   \   002D   30             XCH       A,X
+   \   002E   5D00           AND       A,#0
+   \   0030   30             XCH       A,X
+   \   0031   5DFF           AND       A,#255
+   \   0033   EA0006         CMPW      AX,#1536
+   \   0036   BDCF           BNZ       ??sub_283D_0
+   \   0038   FA64           BR        ??main_48
+    572          		
+    573          		do
+    574          		{
+    575          			WDTE = 0xAC;
+    576          			sub_EDF();
+    577          			if( byte_FEB7 == 0x0F )
+    578          			{
+    579          				byte_FD40++;
+    580          				if( byte_FD40 >= 0x07 )
+    581          				{
+    582          					byte_FD40 = 0;
+    583          					break;
+    584          				}
+    585          				else  //loc_289E
+    586          				{
+    587          					if( byte_FD43 & 0x02 ) 
+    588          						break;
+    589          					else
+    590          					{
+    591          						if( byte_FD40 == 4 )
+    592          							byte_FD40 = 5;
+    593          						break;
+    594          					}
+    595          				}
+    596          			}
+    597          			else  //loc_28B4
+    598          			{
+    599          				byte_FD41 += 1;
+    600          				if( (byte_FD41 & 0xff00) == 0x0600 )
+    601          				{
+    602          					byte_FD40 = byte_FD50;
+    603          					byte_FD57 |= 0x08;
+    604          					return;
+    605          				}
+    606          			}
+    607          		}while(1);
+   \                     ??main_47:
+   \   003A   1399AC         MOV       0xFF99,#172
+   \   003D   9A....         CALL      sub_EDF
+   \   0040   8E....         MOV       A,byte_FEB7
+   \   0043   4D0F           CMP       A,#15
+   \   0045   BD35           BNZ       ??main_49
+   \   0047   8E....         MOV       A,byte_FD40
+   \   004A   41             INC       A
+   \   004B   9E....         MOV       byte_FD40,A
+   \   004E   8E....         MOV       A,byte_FD40
+   \   0051   4D07           CMP       A,#7
+   \   0053   8D10           BC        ??main_50
+   \   0055   A100           MOV       A,#0
+   \   0057   9E....         MOV       byte_FD40,A
+    608          		
+    609          	}while(1);
+   \                     ??main_45:
+   \   005A   9A....         CALL      sub_26ED
+   \   005D   100000         MOVW      AX,#0
+   \   0060   03....         MOVW      byte_FD41,AX
+   \   0063   FAA2           BR        ??sub_283D_0
+   \                     ??main_50:
+   \   0065   16....         MOVW      HL,#byte_FD43
+   \   0068   7194           MOV1      CY,[HL].1
+   \   006A   9D02           BNC       ??main_51
+   \   006C   FAEC           BR        ??main_45
+   \                     ??main_51:
+   \   006E   8E....         MOV       A,byte_FD40
+   \   0071   4D04           CMP       A,#4
+   \   0073   BD05           BNZ       ??main_52
+   \   0075   A105           MOV       A,#5
+   \   0077   9E....         MOV       byte_FD40,A
+   \                     ??main_52:
+   \   007A   FADE           BR        ??main_45
+   \                     ??main_49:
+   \   007C   02....         MOVW      AX,byte_FD41
+   \   007F   CA0100         ADDW      AX,#1
+   \   0082   03....         MOVW      byte_FD41,AX
+   \   0085   02....         MOVW      AX,byte_FD41
+   \   0088   30             XCH       A,X
+   \   0089   5D00           AND       A,#0
+   \   008B   30             XCH       A,X
+   \   008C   5DFF           AND       A,#255
+   \   008E   EA0006         CMPW      AX,#1536
+   \   0091   BDA7           BNZ       ??main_47
+   \   0093   8E....         MOV       A,byte_FD50
+   \   0096   9E....         MOV       byte_FD40,A
+   \   0099   16....         MOVW      HL,#byte_FD57
+   \   009C   71B2           SET1      [HL].3
+   \                     ??main_48:
+   \   009E   AF             RET       
+   \   009F                  REQUIRE ?CL78K_V4_6_L00
+   \   009F                  REQUIRE _A_WDTE
+    610          	
+    611          }
+    612          
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+    613          unsigned char byte_FD56;
+   \                     byte_FD56:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+    614          //OK
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    615          void sub_28D7(void)
+   \                     sub_28D7:
+    616          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000   B3             PUSH      BC
+   \   0001                  ; Total Auto size: 0
+    617          	unsigned char return_2BC9;
+    618          	unsigned char return_2D3B;
+    619          	unsigned char return_2E0A;
+    620          	unsigned char return_2CE8;
+    621          	if( byte_FD40  == byte_FD50 )
+   \   0001   8E....         MOV       A,byte_FD40
+   \   0004   48....         CMP       A,byte_FD50
+   \   0007   BD02           BNZ       ??main_53
+    622          	{
+    623          		return;
+   \   0009   FA69           BR        ??main_54
+    624          	}
+    625          	sub_27AF();
+   \                     ??main_53:
+   \   000B   9A....         CALL      sub_27AF
+    626          	return_2BC9 = sub_2BC9();
+   \   000E   9A....         CALL      sub_2BC9
+    627          	if( (return_2BC9 == 0) || (return_2BC9 == 1) )
+   \   0011   4D00           CMP       A,#0
+   \   0013   AD03           BZ        ??main_55
+   \   0015   51             DEC       A
+   \   0016   BD59           BNZ       ??main_56
+    628          	{
+    629          		//loc_28EF
+    630          		byte_FD56 = 0;
+   \                     ??main_55:
+   \   0018   A100           MOV       A,#0
+   \   001A   9E....         MOV       byte_FD56,A
+    631          		byte_FD50 = byte_FD40;
+   \   001D   8E....         MOV       A,byte_FD40
+   \   0020   9E....         MOV       byte_FD50,A
+   \   0023   FA03           BR        ??main_57
+    632          		
+    633          		do 
+    634          		{
+    635          			return_2D3B = sub_2D3B( byte_FD50,1 );
+    636          			if( return_2D3B )
+    637          			{
+    638          				if( return_2D3B == 0xF5 )
+    639          				{
+    640          					return_2E0A = sub_2E0A();
+    641          					if( return_2E0A )
+    642          					{
+    643          						if( return_2E0A != 1 ) break;
+    644          					}
+    645          					//else // loc_2918
+    646          					{
+    647          						byte_FD56 = 1;
+    648          					}
+    649          				}
+    650          				else  //loc_2944
+    651          				{
+    652          					break;
+    653          				}
+    654          			}
+    655          			else  //loc_291F
+    656          			{
+    657          				byte_FD50 = 0;
+    658          				return_2CE8 = sub_2CE8(byte_FD50,1 );
+    659          				if( return_2CE8 ) break;
+    660          				if( byte_FD50 != byte_FD40 )
+    661          				{
+    662          					break;
+    663          				}
+    664          				if( byte_FD56 == 0 ) break;
+    665          				
+    666          				sub_2FC8();
+   \                     ??sub_28D7_0:
+   \   0025   9A....         CALL      sub_2FC8
+    667          			}
+    668          		}while(1);
+   \                     ??main_57:
+   \   0028   A301           MOV       B,#1
+   \   002A   8E....         MOV       A,byte_FD50
+   \   002D   9A....         CALL      sub_2D3B
+   \   0030   4D00           CMP       A,#0
+   \   0032   AD19           BZ        ??main_58
+   \   0034   4DF5           CMP       A,#245
+   \   0036   BD13           BNZ       ??main_59
+   \   0038   9A....         CALL      sub_2E0A
+   \   003B   4D00           CMP       A,#0
+   \   003D   AD05           BZ        ??main_60
+   \   003F   51             DEC       A
+   \   0040   AD02           BZ        ??main_60
+   \   0042   FA2D           BR        ??main_56
+   \                     ??main_60:
+   \   0044   A101           MOV       A,#1
+   \   0046   9E....         MOV       byte_FD56,A
+   \   0049   FADD           BR        ??main_57
+   \                     ??main_59:
+   \   004B   FA24           BR        ??main_56
+   \                     ??main_58:
+   \   004D   A100           MOV       A,#0
+   \   004F   9E....         MOV       byte_FD50,A
+   \   0052   A301           MOV       B,#1
+   \   0054   8E....         MOV       A,byte_FD50
+   \   0057   9A....         CALL      sub_2CE8
+   \   005A   4D00           CMP       A,#0
+   \   005C   AD02           BZ        ??main_61
+   \   005E   FA11           BR        ??main_56
+   \                     ??main_61:
+   \   0060   8E....         MOV       A,byte_FD50
+   \   0063   48....         CMP       A,byte_FD40
+   \   0066   AD02           BZ        ??main_62
+   \   0068   FA07           BR        ??main_56
+   \                     ??main_62:
+   \   006A   8E....         MOV       A,byte_FD56
+   \   006D   4D00           CMP       A,#0
+   \   006F   BDB4           BNZ       ??sub_28D7_0
+    669          	}
+    670          	sub_27D0();
+   \                     ??main_56:
+   \   0071   9A....         CALL      sub_27D0
+    671          }
+   \                     ??main_54:
+   \   0074   B2             POP       BC
+   \   0075   AF             RET       
+   \   0076                  REQUIRE ?CL78K_V4_6_L00
+    672          
+
+   \                                 In  segment NEAR_Z, align 1, align-sorted
+    673          unsigned char byte_FEB4;
+   \                     byte_FEB4:
+   \   0000                  DS 1
+   \   0001                  REQUIRE __INIT_NEAR_Z
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    674          void sub_2948()
+   \                     sub_2948:
+    675          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+    676          
+    677          }
+   \   0000   AF             RET       
+   \   0001                  REQUIRE ?CL78K_V4_6_L00
+    678          
+
+   \                                 In  segment CODE, align 1, keep-with-next
+    679          void main()
+   \                     main:
+    680          {
+   \   0000                  ; * Stack frame (at entry) *
+   \   0000                  ; Param size: 0
+   \   0000                  ; Total Auto size: 0
+    681             //sub_2076();
+    682             //sub_207A();
+    683             //sub_2084();
+    684             //sub_208F();
+    685             //sub_2093();
+    686             //sub_209A();
+    687             //fun_2160();
+    688             //sub_2186(3,4,5);
+    689             //sub_2600();
+    690              //sub_26ED();
+    691            //sub_27A8();
+    692            //sub_27AF();
+    693            //sub_27D0();
+    694             //sub_27EF();
+    695             //sub_283D();
+    696             //sub_28D7();
+    697          }
+   \   0000   AF             RET       
+   \   0001                  REQUIRE ?CL78K_V4_6_L00
+
+   \                                 In  segment NEAR_ID, align 1, align-sorted
+   \                     `?<Initializer for num_2480>`:
+   \   0000   401E001E       DB 64, 30, 0, 30, 0, 31, 31
+   \          001F1F  
+
+   \                                 In  segment NEAR_ID, align 1, align-sorted
+   \                     `?<Initializer for num_2400>`:
+   \   0000   04000576       DB 4, 0, 5, 118, 5, 112, 5, 105, 5, 99, 5, 94, 5, 88, 5, 83, 5, 79, 5
+   \          05700569
+   \          0563055E
+   \          05580553
+   \          054F05  
+   \   0013   4A054605       DB 74, 5, 70, 5, 66, 4, 252, 4, 238, 4, 224, 4, 212, 4, 200, 4, 189, 4
+   \          4204FC04
+   \          EE04E004
+   \          D404C804
+   \          BD04    
+   \   0025   B204A804       DB 178, 4, 168, 4, 158, 4, 149, 4, 141, 4, 133, 4, 126, 4, 118, 4, 112
+   \          9E049504
+   \          8D048504
+   \          7E047604
+   \          70      
+   \   0036   04690463       DB 4, 105, 4, 99, 4, 94, 4, 88, 4, 0
+   \          045E0458
+   \          0400    
+    698          
+
+   Maximum stack usage in bytes:
+
+     Function      CSTACK
+     --------      ------
+     delay             4
+     main              0
+     sub_2076          0
+     sub_207A          0
+     sub_2084          0
+       -> sub_208F     0
+       -> sub_2093     0
+     sub_208F          0
+     sub_2093          0
+     sub_209A          0
+     sub_2160          0
+     sub_2186          2
+       -> EI           2
+       -> DI           2
+     sub_2600          2
+       -> sub_2948     2
+       -> sub_27A1     2
+       -> sub_27EF     2
+       -> DI           2
+       -> sub_27A8     2
+       -> sub_283D     2
+       -> DI           2
+       -> sub_27A1     2
+       -> sub_28D7     2
+       -> DI           2
+       -> sub_27A8     2
+       -> sub_7F3      2
+       -> sub_8E5      2
+       -> sub_95D      2
+       -> sub_80D      2
+       -> sub_26ED     2
+     sub_26ED          4
+       -> EI           4
+       -> DI           4
+     sub_27A8          0
+     sub_27AF          0
+       -> DI           0
+     sub_27D0          0
+     sub_27EF          2
+       -> sub_27AF     2
+       -> sub_2BC9     2
+       -> sub_2CE8     2
+       -> sub_27D0     2
+     sub_283D          0
+       -> sub_EDF      0
+       -> sub_EDF      0
+       -> sub_26ED     0
+     sub_28D7          2
+       -> sub_27AF     2
+       -> sub_2BC9     2
+       -> sub_2FC8     2
+       -> sub_2D3B     2
+       -> sub_2E0A     2
+       -> sub_2CE8     2
+       -> sub_27D0     2
+     sub_2948          0
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     _A_P3                          1
+     _A_ADCR                        2
+     _A_P12                         1
+     _A_CMP01                       1
+     _A_PM3                         1
+     _A_ADM                         1
+     _A_CR51                        1
+     _A_TMC51                       1
+     _A_TCL50                       1
+     _A_TMC50                       1
+     _A_TMHMD1                      1
+     _A_TCL51                       1
+     _A_WDTE                        1
+     _A_TMC00                       1
+     _A_PRM00                       1
+     _A_IF0                         2
+     _A_IF1                         2
+     _A_MK0                         2
+     _A_MK1                         2
+     reg_AX                         2
+     reg_BC                         2
+     reg_DE                         2
+     reg_HL                         2
+     byte_FF17                      1
+     byte_FE62                      1
+     byte_FE70                      2
+     byte_FE73                      2
+     delay                         33
+     sub_2076                       4
+     sub_207A                      12
+     sub_2084                      15
+     sub_208F                       4
+     sub_2093                       7
+     sub_209A                       4
+     sub_2160                      37
+     byte_FEC8                      1
+     byte_FEC9                      1
+     byte_FEA0                      1
+     byte_FEB7                      1
+     sub_2186                     139
+     num_FE20                      32
+     word_FE32                      2
+     byte_FEC0                      1
+     byte_FD40                      1
+     byte_FD43                      1
+     byte_FD57                      1
+     byte_FE91                      1
+     byte_FEB6                      1
+     byte_FE90                      1
+     byte_FE3E                      1
+     byte_FE92                      1
+     byte_FE31                      1
+     byte_FE34                      1
+     byte_FE35                      1
+     sub_2600                     315
+     num_2480                       7
+     num_2400                      64
+     sub_26ED                     288
+     byte_FD44                      1
+     byte_FD45                      1
+     byte_FD46                      1
+     byte_FD47                      1
+     byte_FE82                      1
+     sub_27A8                      11
+     sub_27AF                      36
+     sub_27D0                      33
+     byte_FD50                      1
+     sub_27EF                      82
+     byte_FD41                      2
+     sub_283D                     159
+     byte_FD56                      1
+     sub_28D7                     118
+     byte_FEB4                      1
+     sub_2948                       1
+     main                           1
+     ?<Initializer for num_2480>    7
+     ?<Initializer for num_2400>   64
+
+ 
+ 1 299 bytes in segment CODE
+    19 bytes in segment NEAR_A
+    71 bytes in segment NEAR_I
+    71 bytes in segment NEAR_ID
+    74 bytes in segment NEAR_Z
+     5 bytes in segment SADDR_A
+ 
+ 1 299 bytes of CODE  memory
+    71 bytes of CONST memory
+   145 bytes of DATA  memory (+ 24 bytes shared)
+
+Errors: none
+Warnings: 6
