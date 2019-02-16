@@ -34,9 +34,144 @@ loc_2BB5:
     //该函数返回calcValue 与 0xFFFF的cmp结果
     return calcValue;
 }
+unsigned char word_FCE4[2];
+unsigned char word_FCE6[2];
+unsigned char word_FCE8[2];
+unsigned char word_FCEA[2];
+unsigned char word_FCEC[2];
+unsigned char word_FCEE[2];
+
+unsigned char byte_FCF0;
+unsigned char byte_FCF1;
+unsigned char byte_FCF2;
+
+unsigned char *word_FCF4;
+unsigned char *word_FCF6;
+
+unsigned char byte_2BC3[3]={0,0,0};
+unsigned char byte_2BC6[3]={0x0D,0x0E,0x0F};
+unsigned char ret_sub_3325 = 0;
+unsigned char *ret_sub_3260;
+unsigned char ret_sub_3279;
+unsigned char ret_sub_32B2;
+unsigned char ret_sub_31AF;
+unsigned char ret_sub_31BF;
+unsigned char ret_sub_31D3;
+unsigned char ret_sub_3156;
+unsigned char ret_sub_31B7;
+unsigned char ret_sub_32EB;
+unsigned char ret_sub_3209;
+//C is a return Value
 void sub_2BC9()
 {
+    ret_sub_3325 = sub_3325();
+    if(ret_sub_3325 == 0){
+        //loc_2BD8:
+        word_FCE8[0] = 0xFF;
+        word_FCE8[1] = 0x00;
+        byte_FCF1 = 0;
+        //loc_2BE5:
+        for(word_FCE8[1] = 0x00; word_FCE8[1] < 0x03; sub_31B7(), word_FCE8[1] ++)
+        {
+            ret_sub_3260 = sub_3260(word_FCE8[1]);
+            ret_sub_3279 = sub_3279(ret_sub_3260);
+            if( !(ret_sub_3279 == 0) ){ //取非  //goto loc_2C4E;
+                ret_sub_32B2 = sub_32B2(ret_sub_3260);
+                if(ret_sub_32B2 == 0xFF || word_FCE8[0] != 0xFF){
+                    //loc_2C0C:
+                    ret_sub_31AF = sub_31AF();
+                    ret_sub_31BF = sub_31BF();
+                    if(ret_sub_31BF == 0){
+                        //loc_2C19:
+                        byte_FCF2 = 0x02;
+                        //loc_2C1E:
+                        do{
+                            ret_sub_31D3 = sub_31D3((byte_2BC6[word_FCE8[1]] << 8) + byte_2BC3[word_FCE8[1]]);
+                            if(ret_sub_31D3 == 0){
+                                continue;  //goto loc_2C4E;
+                            }
+                            byte_FCF2 --;
+                        }while(byte_FCF2 != 0);
+                        byte_FCF1 = 1;
+                        ret_sub_3156 = sub_3156(word_FCE8[1]);
+                        if( !(ret_sub_3156 == 0) ){ //取非  //goto loc_2C4E;
+                            goto loc_2CD7;
+                        }
+                    }else{
+                        goto loc_2CD0;
+                    }
+                }else{
+                    word_FCE8[0] = word_FCE8[1];
+                    //goto loc_2C4E;
+                }
+            }
+        }
+        //loc_2C5E:
+        if(word_FCE8[0] != 0xFF){
+        //loc_2CC5:
+            if(byte_FCF1 != 0x00){
+                goto loc_2CDE;
+            }
+            C = 0x00;
+            goto loc_2CE4;
+        }else{
+            //loc_2C6A:
+            for(word_FCE8[1] = 0x00; word_FCE8[1]< 0x03; word_FCE8[1]++)
+            {
+                ret_sub_3260 = sub_3260(word_FCE8[1]);
+                ret_sub_32EB = sub_32EB(ret_sub_3260);
+                if( !(ret_sub_32EB != 0) ){ //取非 loc_2CB8
+                    word_FCE4[0] = 0x55;  word_FCE4[1] = 0x55;
+                    word_FCE6[0] = 0x55;  word_FCE6[1] = 0x55;
+                    ret_sub_31AF = sub_31AF();
+                    ret_sub_31BF = sub_31BF();
+                    if(ret_sub_31BF != 0){
+                        goto loc_2CD0;
+                    }
+                    ret_sub_3209 = sub_3209(byte_2BC6[word_FCE8[1]], 0x03, ret_sub_32EB);
+                    if(ret_sub_3209 != 0){
+                        //loc_2CA6
+                        ret_sub_3156 = sub_3156(word_FCE8[1]);
+                        if(ret_sub_3156 != 0){
+                            goto loc_2CD7;
+                        }else{
+                            sub_31B7();
+                            byte_FCF1 = 0x01;
+                            continue; //    loc_2CB8:
+                        }
+                    }else{
+                        sub_32B7();
+                        goto loc_2CC5;
+                    }
+                }
 
+            }
+        }
+
+    }else{
+        C = 0xF4;
+        return;
+    }
+loc_2CC5:
+    if(byte_FCF1 != 0){
+        goto loc_2CDE;
+    }
+    C = 0x00;
+    goto loc_2CE4;
+loc_2CD0:
+    sub_31B7();
+    C = 0xFE;
+    goto loc_2CE4;
+loc_2CD7:
+    sub_31B7();
+    C = 0xFD;
+    goto loc_2CE4;
+loc_2CDE:
+    C = 0x01;
+    goto loc_2CE4;
+
+loc_2CE4:
+    return;
 }
 void sub_2CE8()
 {
@@ -50,22 +185,23 @@ void sub_2E0A()
 {
 
 }
-unsigned char *word_FCF4;
-unsigned short int word_FCE4[4];
+
 unsigned char sub_3092()
 {
     unsigned char count_0_3;
     unsigned char count_0_8;
+    unsigned short int *p_word_FCE4;
     for(count_0_3 = 0; count_0_3 < 3; count_0_3++){
         word_FCF4 = sub_3260(count_0_3);//3400h,3800h,3C00h
         for(count_0_8 = 0; count_0_8 < 8; count_0_8++){
             *(((unsigned char *)word_FCE4) + count_0_8) = *(word_FCF4 + count_0_8);
         }
 loc_30C0:
-        if(word_FCE4[0] != 0x5555) continue;
-        if(word_FCE4[1] != 0x5555) continue;
-        if(word_FCE4[2] != 0xFFFF) continue;
-        if(word_FCE4[3] != 0xFFFF) continue;
+        p_word_FCE4 = ( unsigned short int *)word_FCE4;
+        if(p_word_FCE4[0] != 0x5555) continue;
+        if(p_word_FCE4[1] != 0x5555) continue;
+        if(p_word_FCE4[2] != 0xFFFF) continue;
+        if(p_word_FCE4[3] != 0xFFFF) continue;
         return count_0_3;
     }
     return 0xFF;
@@ -155,12 +291,20 @@ unsigned char sub_3156(
 
 unsigned char sub_31AF()
 {
-    return sub_2A00();
+    unsigned char ret_sub_2A00;
+    DI();
+    ret_sub_2A00 = sub_2A00();
+    EI();
+    return ret_sub_2A00;
 }
 
 unsigned char sub_31B7()
 {
-    return sub_2A0D();
+    unsigned char ret_sub_2A0D;
+    DI();
+    ret_sub_2A0D = sub_2A0D();
+    EI();
+    return ret_sub_2A0D;
 }
 unsigned char sub_31BF()
 {
