@@ -61,6 +61,8 @@ unsigned char ret_sub_3156;
 unsigned char ret_sub_31B7;
 unsigned char ret_sub_32EB;
 unsigned char ret_sub_3209;
+unsigned char ret_sub_3092;
+unsigned char *ret_sub_311F;
 //C is a return Value
 void sub_2BC9()
 {
@@ -173,14 +175,83 @@ loc_2CDE:
 loc_2CE4:
     return;
 }
-void sub_2CE8()
+void sub_2CE8(unsigned char *SP)
 {
+    HL = SP;
 
+    ret_sub_3325 = sub_3325();
+    if( ret_sub_3325 == 0 ){
+        loc_2CF9:
+        ret_sub_3092 = sub_3092();
+        if(ret_sub_3092 == 0xFF){
+//loc_2D35:
+            C = 0xFA;
+            goto loc_2D37;
+        }
+        //X = ret_sub_3092;
+        //A = *SP;
+        ret_sub_311F = sub_311F(ret_sub_3092, *SP);
+        if(ret_sub_311F == 0x0000){
+            loc_2D31:
+            C = 0xF7;
+            goto loc_2D37;
+        }
+        ret_sub_311F ++;
+        //BC = ret_sub_311F;
+        DE =  (*(SP + 3) << 8) + *(SP + 2);
+        //HL = ret_sub_311F;
+        for(C = 0; C < 0x01; C++)
+        {
+            *((unsigned char *)DE) = *ret_sub_311F;
+            ret_sub_311F ++;
+            DE ++;
+        }
+Loc_2D23:
+        if(  ((unsigned short int) ret_sub_311F) & 0x03 == 0 ){
+            DE --;
+             *((unsigned char *)DE) = *ret_sub_311F;
+        }
+        C = 0;
+        goto loc_2D37;
+    }else{
+        C = 0xF4;
+        goto loc_2D37;
+    }
+
+loc_2D37:
+    return;
 }
-void sub_2D3B()
+void sub_2D3B(unsigned char *SP)
 {
+    ret_sub_3325 = sub_3325();
+    if(ret_sub_3325 != 0) return;
+    //loc_2D4A
+    ret_sub_3092 = sub_3092();
+    if(ret_sub_3092 == 0xFF){
+        C = 0XFA;
+        return;
+    }
+    //loc_2D54
+    word_FCE8[0] = ret_sub_3092;
+    //DE = 0xFCE4 + 0x0003; //&word_FCE4[3]
+    unsigned char *pDE;
+    unsigned char *pHL;
+    pDE = word_FCE4;
+    *pDE = 0xFF;
+    *(pDE+1) = 0xFF;
+    *(pDE+2) = 0xFF;
+    *(pDE+3) = 0xFF;
+    HL = SP;
+    word_FCE4[0] = *SP;
+    DE = (unsigned short int)((*(SP+3) << 8) + *(SP+2));
+    pHL = word_FCE4;
+    pHL ++;
+    C= 0;
 
-}
+loc_2D7A:
+    
+
+ }
 void sub_2E0A()
 {
 
@@ -227,7 +298,7 @@ unsigned char *sub_30EA(unsigned char numerIndex)
     return word_FCF4;
 }
 
-unsigned short int sub_311F(unsigned char numerIndex, unsigned char searchValue)
+unsigned char *sub_311F(unsigned char numerIndex, unsigned char searchValue)
 {
     unsigned char *pStart;
     unsigned char *pEnd;
