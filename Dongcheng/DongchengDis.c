@@ -44,7 +44,8 @@ unsigned char word_FCEE[2];
 unsigned char byte_FCF0;
 unsigned char byte_FCF1;
 unsigned char byte_FCF2;
-
+unsigned char byte_FCF3;
+//unsigned char *word_FCEE;
 unsigned char *word_FCF4;
 unsigned char *word_FCF6;
 
@@ -63,6 +64,7 @@ unsigned char ret_sub_32EB;
 unsigned char ret_sub_3209;
 unsigned char ret_sub_3092;
 unsigned char *ret_sub_311F;
+unsigned char *ret_sub_30EA;
 //C is a return Value
 void sub_2BC9()
 {
@@ -221,6 +223,8 @@ Loc_2D23:
 loc_2D37:
     return;
 }
+
+
 void sub_2D3B(unsigned char *SP)
 {
     ret_sub_3325 = sub_3325();
@@ -248,12 +252,257 @@ void sub_2D3B(unsigned char *SP)
     pHL ++;
     C= 0;
 
-loc_2D7A:
-    
+    do{
+        *pHL =  *((unsigned short int *)DE);
+        pHL ++;
+        DE ++;
+        C ++;
+    }while(C < 0x01) ; //???
 
+    word_FCE6[1] = word_FCE6[0];
+    word_FCE6[0] = 0;
+
+    C = word_FCE8[0];
+    ret_sub_3260 = sub_3260(word_FCE8[0]);
+    ret_sub_3260 += 0x400;
+    *((unsigned short int *)word_FCEC) = ret_sub_3260;
+    byte_FCF0 = byte_2BC6[C];
+    byte_FCF2 = 2;
+    ret_sub_30EA = sub_30EA(word_FCE8[0]);
+    *((unsigned short int *)word_FCEE) = ret_sub_30EA;
+    sub_31AF();
+    ret_sub_31BF = sub_31BF();
+    if(ret_sub_31BF != 0x00){
+        C = 0xFE;
+        return;
+    }
+
+    while(1)
+    {
+        
+        if( *((unsigned short int*)word_FCEE) >= *((unsigned short int *)word_FCEC) ){
+            C= 0xF5;
+            return;
+        }
+loc_2DCE:
+        //DE = *((unsigned short int*)word_FCEE);
+        //B = 0x03;
+        //A = byte_FCF0;
+        ret_sub_3209 = sub_3209(byte_FCF0, 0x03, *((unsigned short int*)word_FCEE));
+        if(ret_sub_3209 == 0){
+            C = 0x00;
+            return;
+        }
+        if( !(ret_sub_3209 == 0x1E)){
+            byte_FCF2--;
+            if(byte_FCF2 == 0){
+                C = 0xF6;
+                return;
+            }
+        }
+        loc_2DE8:
+        *((unsigned short int*)word_FCEE) += 4;
+    }
+
+    return;
  }
+
 void sub_2E0A()
 {
+    unsigned char *pHL;
+    ret_sub_3325 = sub_3325();
+    if(ret_sub_3325 != 0){
+        C = 0xF4;
+        return;
+    }
+loc_2E19:
+    byte_FCF1 = 0;
+    ret_sub_3092 = sub_3092();
+    if(ret_sub_3092 == 0xFF){
+        C = 0xFA;
+        return;
+    }
+loc_2E28:
+    word_FCE8[0] = ret_sub_3092;
+    word_FCE8[1] = ret_sub_3092;
+    ret_sub_3260 = sub_3260(ret_sub_3092);
+
+loc_2E37:
+    A = word_FCE8[1];
+    A ++;
+    if( A >= 0x03) A = 0;
+    if( A == word_FCE8[0]){
+        C = 0xF8;
+        return;
+    }
+    loc_2E49:
+    word_FCE8[1] = A;
+    ret_sub_3260 = sub_3260(A);
+    *((unsigned short int*)word_FCEC) = ret_sub_3260;
+    pHL = ret_sub_3260;
+    ret_sub_3279 = sub_3279(pHL);
+    if(ret_sub_3279 == 0){
+        goto loc_2E37;
+    }
+    sub_31AF();
+    ret_sub_31BF = sub_31BF();
+    if(ret_sub_31BF != 0){
+        C= 0xFE;
+        sub_31B7();
+        return;
+    }
+
+    byte_FCF2 = 0x02;
+
+loc_2E6F:
+    AX = (num_2BC6[word_FCE8[1]] << 8) + num_2BC3[word_FCE8[1]];
+    ret_sub_31D3 = sub_31D3(AX);
+    if(ret_sub_31D3 == 0){
+loc_2EA4:
+        sub_31B7();
+        ret_sub_32EB = sub_32EB(word_FCEC);
+        if(ret_sub_32EB != 0){
+            goto loc_2E37; //continue;
+        }
+        *((unsigned short int *)word_FCEC) += 0x0008;
+        
+        byte_FCF0 = num_2BC6[word_FCE8[1]];
+        byte_FCF2 = 0;
+
+loc_2ECB:
+        do{
+            if(byte_FCF2 >= 0x03){
+loc_2F3E:
+                sub_31AF();
+                ret_sub_31BF = sub_31BF();
+                if( !(ret_sub_31BF == 0 )){
+                    C = 0xFE;
+                    sub_31B7();
+                    return;    
+                }
+loc_2F4A:
+                *((unsigned short int*)word_FCE4) = 0x5555;
+                *((unsigned short int*)word_FCE6) = 0x5555;
+                DE = *((unsigned short int *)word_FCEC);
+                B = 0x03;
+                A = byte_FCF0;
+                ret_sub_3209 = sub_3209(A, B, DE);
+                if( !(ret_sub_3209 == 0)){
+                    goto loc_2F63;
+                }
+loc_2F78:
+                AX = *((unsigned short int*)word_FCEA);
+                AX += 0x0004;
+                DE = AX;
+                HL = num_2BC6;
+                //A = word_FCE8[0];
+                //numsub_1
+                //C = A;
+                A = num_2BC6[word_FCE8[0]];
+                B = 0x03;
+                ret_sub_3209 = sub_3209(A, B, DE);
+                if(!(ret_sub_3209 == 0)){
+                    ret_sub_3156 = sub_3156(word_FCE8[0]);
+                    if(ret_sub_3156 != 0) {
+                        C = 0xFD;
+                        sub_31B7();
+                        return;
+                    }
+                    byte_FCF1 = 0x01;
+                }
+loc_2FA2:
+                if( byte_FCF1 != 0 ){
+                    C = 0x01;
+                    sub_31B7();
+                    return;
+                }
+                C = 0;
+                sub_31B7();
+                return;
+                
+            }
+            A = word_FCE8[0];
+            X = byte_FCF2;
+            ret_sub_311F = sub_311F(A,X);
+            if(ret_sub_311F == 0x00){
+                goto loc_2F35;
+            }
+
+            HL = ret_sub_311F;
+            DE = word_FCE4;
+            C = 0;
+            do{
+                *((unsigned char *) DE) =  *( (unsigned char *) HL);
+                HL ++;
+                DE ++;
+                if(C >= 3) break;
+                C++;
+            }while(1);
+            loc_2EF0:
+            sub_31AF();
+            ret_sub_31BF = sub_31BF();
+            if(!(sub_31BF == 0x00)){
+                C = 0xFE;
+                sub_31B7();
+                return;
+            }
+loc_2EFD:
+            byte_FCF3 = 0x02;
+            AX = word_FCEE[0];
+
+            while(1)
+            {
+                DE = AX;
+                A = word_FCE8[1];
+                //nullsub_1();
+                B = 0x3;
+                A = byte_FCF0;
+                ret_sub_3209 = sub_3209(A, B, DE);
+                if(ret_sub_3209 == 0){
+loc_2F2B:
+                    AX = DE;
+                    AX += 0x0004;
+                    *((unsigned short int *)word_FCEE) = AX;
+                    sub_31B7();
+                    goto loc_2F35;
+                }
+                if(ret_sub_3209 == 0x1E){
+                    goto loc_2F25;
+                }
+                byte_FCF3 --;
+                if(byte_FCF3 == 0){
+                    goto loc_2F63;
+                }
+loc_2F25:
+                AX = DE;
+                AX += 0x04;
+            }
+loc_2F35:
+        byte_FCF2 ++;
+        }while(1); //goto loc_2ECB;
+    }
+
+    byte_FCF2--;
+    if(byte_FCF2 != 0) goto loc_2E6F;
+    ret_sub_3156 = sub_3156(word_FCE8[1]);
+    if(ret_sub_3156 != 0){
+        C = 0xFD;
+        return;
+    }
+loc_2E9A:
+    byte_FCF1 = 1;;
+    sub_31B7();
+    goto loc_2E37;
+loc_2F63:
+    ret_sub_3156 = sub_3156(word_FCE8[1]);
+    if(ret_sub_3156 != 0){
+        C = 0xFD;
+        sub_31B7();
+        return;
+    }
+    byte_FCF1 = 1;
+    sub_31B7();
+    goto loc_2E37;
 
 }
 
